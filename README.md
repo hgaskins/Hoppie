@@ -1,7 +1,7 @@
 # Hoppie
 <b>Team Name</b>: Hoppies
 
-<b>Team Members</b>: [Hannah Gaskins](), [Randy Gulling](), [Johnny Luangphasy]()
+<b>Team Members</b>: [Hannah Gaskins]("https://github.com/hnag409"), [Randy Gulling]("https://github.com/rgylling"), [Johnny Luangphasy]("https://github.com/jluangphasy")
 
 The purpose of this project is to create a web app for beer consumers and connoisseurs alike.
 
@@ -19,5 +19,13 @@ links to UBER and Lyft apps.
 ## Diagrams
 
 ## Wireframes
+
+![homepageOne](/wireframes/homepageOne.jpg "homepageOne")
+
+![homepageTwo](/wireframes/homepageTwo.jpg "homepageTwo")
+
+![beerandbreweryPage](/wireframes/beerandbreweryPage.jpg "beerandbreweryPage")
+
+![BACPage](/wireframes/BACPage.jpg "BACPage")
 
 ## Links

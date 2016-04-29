@@ -15,7 +15,7 @@ about different types of beers. The app will also include information to calcula
 -  as a user I want to find information about beer and have interactivity including a BAC with links to driving services so I can get home safely.
 
 
-## Diagrams
+## Domain Model
 ![Domain Modeling](wireframes/domainModel.jpg "domainModel")
 
 ## Wireframes

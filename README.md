@@ -6,8 +6,7 @@
 The purpose of this project is to create a web app for beer consumers and connoisseurs alike.
 
 A user would want to access the site and be able to find local breweries around them, and find out information
-about different types of beers. The app will also include information to calculate BAC and if it is a high number, provide
-links to UBER and Lyft apps.
+about different types of beers. The app will also include information to calculate BAC and if it is a high number, provide links to UBER and Lyft apps.
 
 ## Stories
 
@@ -16,7 +15,8 @@ links to UBER and Lyft apps.
 -  as a user I want to find information about beer and have interactivity including a BAC with links to driving services so I can get home safely.
 
 
-## Diagrams
+## Domain Model
+![Domain Modeling](wireframes/domainModel.jpg "domainModel")
 
 ## Wireframes
 

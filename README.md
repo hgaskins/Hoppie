@@ -13,7 +13,8 @@ links to UBER and Lyft apps.
 
 - as a developer I want to use FP, OOP, middleware, SMACCS, and DRY principles.
 - as a developer I want to use the appropriate APIs, and data to display quality information to my users.
--  as a user I want to find information about beer and have interactivity including a BAC with links to driving services so I can get home safely. 
+-  as a user I want to find information about beer and have interactivity including a BAC with links to driving services so I can get home safely.
+
 
 ## Diagrams
 

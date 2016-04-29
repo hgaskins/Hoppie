@@ -19,7 +19,7 @@ about different types of beers. The app will also include information to calcula
 - as a user I want the additional beer and brewery information to be displayed in a organized fashion to easily see that information.
 - as a user I want to know my BAC based on customized inputs I give the site.
 - as a user I want to know who created this site and why.
-- as a developer I wa
+- as a developer I want to use webSQL to persist my site's state. 
 
 
 ## Domain Model

@@ -40,6 +40,21 @@
       </section>
       <section class="bacPage">
       </section>
+      <!-- Handlebars -->
+      <script id="breweriesTemplate" type="text/x-handlebars-template">
+        {{#unless is_closed}}
+          <article>
+            <h1>{{name}}</h1>
+            <img src="{{image_url}}">
+            <address>
+              {{location.address}}<br>
+              {{location.city}}, {{location.state_code}} {{location.postal_code}}
+            </address>
+            <img src="{{rating_img_url}}">
+            <a href="{{url}}">See more on Yelp</a>
+        </article>
+      {{/unless}}
+      </script>
     </main>
     <script src="/vendor/jquery/jquery.js"></script>
     <script src="/vendor/handlebars/handlebars.js"></script>

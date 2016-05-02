@@ -41,7 +41,7 @@ var requestYelp = function(setParameters, callback) {
 app.get('/api/yelp/', function (req, res) {
   var searchParameters = {
     location: 'Portland+OR',
-    limit: 10,
+    limit: 3,
     category_filter: 'breweries'
   };
 

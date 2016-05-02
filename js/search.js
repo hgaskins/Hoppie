@@ -1,10 +1,27 @@
 (function(module) {
-  function Search (opts) {
-    Onject.keys(opts).forEach(function(e, index, keys) {
-      this[e] = opts[e];
-    }, this);
-  }
+  var search = {};
 
-  module.Search = Search;
+  var render = function(brewery) {
+    var template = Handlebars.compile($('#breweriesTemplate').text());
+
+    return template(brewery);
+  };
+
+  search.getBreweries = function(next) {
+    $.ajax( {
+      url: '/api/yelp/',
+      type: 'GET',
+      data: {location: 'Portland'},
+      dataType: 'json'
+    }).done(next);
+
+  };
+  search.gotBreweries = function(data, message, xhr) {
+    data.businesses.forEach(function(thisBusiness) {
+      $('.breweryPage').append(render(thisBusiness));
+    });
+  };
+  search.getBreweries(search.gotBreweries);
+  module.search = search;
 
 })(window);

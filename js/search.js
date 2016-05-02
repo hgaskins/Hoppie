@@ -7,21 +7,24 @@
     return template(brewery);
   };
 
-  search.getBreweries = function(next) {
-    $.ajax( {
+  search.getBreweries = function(searchLocation, next) {
+    var searchLocation = searchLocation.toLowerCase().replace('-', ' ');
+
+    $.ajax({
       url: '/api/yelp/',
       type: 'GET',
-      data: {location: 'Portland'},
+      data: { location: searchLocation },
       dataType: 'json'
     }).done(next);
-
   };
+
   search.gotBreweries = function(data, message, xhr) {
-    data.businesses.forEach(function(thisBusiness) {
-      $('.breweryPage').append(render(thisBusiness));
-    });
+    if (!data.error) {
+      data.businesses.forEach(function(thisBusiness) {
+        $('.breweryPage').append(render(thisBusiness));
+      });
+    }
   };
-  search.getBreweries(search.gotBreweries);
-  module.search = search;
 
+  module.search = search;
 })(window);

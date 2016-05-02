@@ -4,7 +4,7 @@
     page.base('/');
 
     page('', homeController.index);
-    page('breweries', breweriesController.index);
+    page('breweries/:location', breweriesController.index);
     page('about', aboutController.index);
     page('bac', bacController.index);
 

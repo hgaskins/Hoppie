@@ -1,13 +1,13 @@
 /**
  * FONTS
  */
-@import url('');
-@import url('');
+/*@import url('');
+@import url('');*/
 
 /**
  * BASE
  */
-@import url('../vendor/foundation.foundation.min.js');
+@import url('/vendor/foundation/foundation.min.css');
 @import url('_base.css');
 
 

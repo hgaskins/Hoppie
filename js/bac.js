@@ -1,12 +1,24 @@
-(function(module) {
+// (function(module) {
 
-  var drinks =
-  var percentage =
-  var weight =
-  var hours =
+  var drinks = $('#drinksOutput')
+  var percentage = $('#percentageOutput')
+  var weight = $('#weightOutput')
+  var hours = $('#hoursOutput')
+  console.log("hellothere");
+  console.log(drinks);
 
-  
+  $('#bacSubmit').on("click" , function () {
+    var drink = drinks.val();
+    var percent = percentage.val();
+    var weights = weight.val();
+    var hour = hours.val();
 
-  module.Bac = Bac;
+    var bacTotal = ((drink * 12 * percent * 0.075 / weights) - (hour * 0.015));
+    console.log(bacTotal);
 
-})(window);
+  });
+
+
+//   module.Bac = Bac;
+//
+// })(window);

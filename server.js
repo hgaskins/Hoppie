@@ -1,17 +1,58 @@
-var requestProxy = require('express-request-proxy'),
-  express = require('express'),
-  port = process.env.PORT || 3000,
-  app = express();
+var requestProxy = require('express-request-proxy');
+var express = require('express');
+var oauthSignature = require('oauth-signature');
+var nonce = require('nonce')();
+var request = require('request');
+var queryString = require('querystring');
+var lodash = require('lodash');
+var port = process.env.PORT || 3000;
+var app = express();
 
-var proxyGitHub = function(request, response) {
-  console.log('Routing GitHub request for', request.params[0]);
-  (requestProxy({
-    url: 'https://api.github.com/' + request.params[0],
-    headers: { Authorization: 'token ' + process.env.GITHUB_TOKEN }
-  }))(request, response);
+var requestYelp = function(setParameters, callback) {
+  var httpMethod = 'GET';
+  var url = 'http://api.yelp.com/v2/search';
+  var default_parameters = {
+    location: 'Portland+OR',
+    sort: '2'
+  };
+  var required_parameters = {
+    oauth_consumer_key : process.env.YELP_CONSUMER_KEY,
+    oauth_token : process.env.YELP_TOKEN,
+    oauth_nonce : nonce(),
+    oauth_timestamp : nonce().toString().substr(0, 10),
+    oauth_signature_method : 'HMAC-SHA1',
+    oauth_version : '1.0'
+  };
+  var parameters = lodash.assign(default_parameters, setParameters, required_parameters);
+  var consumerSecret = process.env.YELP_CONSUMER_SECRET;
+  var tokenSecret = process.env.YELP_TOKEN_SECRET;
+  var signature = oauthSignature.generate(httpMethod, url, parameters, consumerSecret, tokenSecret, { encodeSignature: false });
+
+  parameters.oauth_signature = signature;
+
+  var paramURL = queryString.stringify(parameters);
+  var apiURL = url + '?' + paramURL;
+
+  request(apiURL, function(error, response, body){
+    return callback(error, response, body);
+  });
 };
 
-app.get('/github/*', proxyGitHub);
+app.get('/api/yelp/', function (req, res) {
+  var searchParameters = {
+    location: 'Portland+OR',
+    limit: 3,
+    category_filter: 'breweries'
+  };
+
+  if (req.query.location) {
+    searchParameters.location = req.query.location;
+  }
+
+  requestYelp(searchParameters, function (error, response, body) {
+    res.send(body);
+  });
+});
 
 app.use(express.static('./'));
 

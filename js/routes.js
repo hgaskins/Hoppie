@@ -10,6 +10,7 @@
 
     page();
   };
+  $(document).foundation();
   routes.setMapping();
   module.routes = routes;
 })(window);

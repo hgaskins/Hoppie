@@ -1,4 +1,4 @@
-.fullBackgroundImage:before {
+/*.fullBackgroundImage:before {
   background-image: url('/img/beerhome.gif');
   background-position: center;
   background-repeat: no-repeat;
@@ -14,4 +14,8 @@
   -webkit-filter: contrast(0.9) brightness(0.5);
   filter: contrast(0.9) brightness(0.5);
   z-index: -1;
+}*/
+
+body {
+  background-color: #fc3;
 }

@@ -20,7 +20,7 @@
 
   search.gotBreweries = function(data, message, xhr) {
     if (data.error) {
-      page.rediect('/');
+      page.redirect('/');
     } else {
       data.businesses.forEach(function(thisBusiness) {
         $('.breweryPage').append(render(thisBusiness));

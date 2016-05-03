@@ -23,25 +23,31 @@ body {
 .off-canvas-content {
   background: #fc3;
   height: 100%;
+  box-shadow: none;
 }
 
 .off-canvas {
-  background: black;
+  background: #41443E;
+}
+
+p, address{
+  font-family:"proxima-nova",sans-serif;
 }
 
 .dawgs {
   width:30%;
   border-radius:50%;
 }
-/*.off-canvas-nav {
-  position: relative;
-}
+ .button {
+   background-color: #41443E;
+   font-family: "fatfrank",sans-serif;
+ }
 
-.off-canvas-nav > ul {
-  position: absolute;;
-  background: black;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}*/
+ a {
+   color: #FEFEFE;
+   font-family: "fatfrank",sans-serif;
+ }
+
+ i {
+   font-size: 30px;
+ }

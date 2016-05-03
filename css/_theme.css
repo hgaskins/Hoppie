@@ -29,6 +29,10 @@ body {
   background: black;
 }
 
+.dawgs {
+  width:30%;
+  border-radius:50%;
+}
 /*.off-canvas-nav {
   position: relative;
 }

@@ -3,121 +3,140 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoppie</title>
+    <link rel="shortcut icon" href="/img/hoppieFavicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/hoppieFavicon.png">
+    <meta name="apple-mobile-web-app-title" content="Hoppie">
     <link rel="stylesheet" href="/css/master.css">
   </head>
-  <body class="fullBackgroundImage">
-    <header>
-      <hgroup>
-        <h1>Hoppie</h1>
-        <h2>Find breweries near your area</h2>
-      </hgroup>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/bac">BAC</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="homePage">
-        <div class="row">
-          <div class="small-10 small-offset-1 medium-8 medium-offset-2 large-6 large-offset-3 columns">
-            <div class="input-group">
-              <input type="text" value class="input-group-field" placeholder="Search by neighborhood, address or city" autocomplete="off">
-              <div class="input-group-button">
-                <button type="button" class="button js-button-search">Search</button>
-              </div>
-            </div>
-          </div>
+  <body>
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        <div class="off-canvas position-right" data-position="right" id="offCavnas" data-off-canvas>
+          <!-- <div class="off-canvas-nav"> -->
+            <ul class="vertical menu">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/bac">BAC Calculator</a></li>
+            </ul>
+          <!-- </div> -->
         </div>
-      </section>
-      <section class="breweryPage">
-      </section>
-      <section class="aboutPage">
-      </section>
-      <section class="bacPage">
-        <div class="orbit small-8 float-center"  role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play false>
-          <ul class="orbit-container">
-            <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-            <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-            <li class="orbit-slide">
-              <div class=" row small-2 columns">
-                <input type="number" id="drinksOutput">
-              </div>
-              <div class="small-4 columns small-offset-4">
-                <div class="slider" data-slider data-initial-start="1" data-end="30">
-                  <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="drinksOutput"></span>
-                  <span class="slider-fill" data-slider-fill></span>
+        <div class="off-canvas-content" data-off-canvas-content>
+          <header>
+            <div class="row">
+              <div class="small-10 small-offset-1 medium-8 medium-offset-2 large-6 large-offset-3 columns">
+                <div class="logo text-center">
+                  <a href="/">
+                    <img src="/img/hoppieLogoTwo.svg">
+                  </a>
                 </div>
-             </div>
-            <div class="row small-4 small-offset-4 text-center columns">
-              <p> Number of Beers Consumed </p>
-            </div>
-          </li>
-          <li class="orbit-slide">
-            <div class=" row small-2 columns">
-              <input type="number" id="percentageOutput">
-            </div>
-            <div class="small-4 columns small-offset-4">
-              <div class="slider" data-slider data-initial-start="0" data-end="100">
-                <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="percentageOutput"></span>
-                <span class="slider-fill" data-slider-fill></span>
+                <button class="button" type="button" data-toggle="offCavnas" aria-expanded="false" aria-controls="offCanvas"><i class="fi-list medium"></i></button>
               </div>
             </div>
-            <div class="row small-4 small-offset-4 text-center columns">
-              <p> Average Alcohol Content Percentage </p>
-            </div>
-          </li>
-
-          <li class="orbit-slide">
-            <div class=" row small-2 columns">
-              <input type="number" id="weightOutput">
-            </div>
-            <div class="small-4 columns small-offset-4">
-              <div class="slider" data-slider data-initial-start="1" data-end="1000">
-                <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="weightOutput"></span>
-                <span class="slider-fill" data-slider-fill></span>
+          </header>
+          <main>
+            <section class="homePage">
+              <div class="row">
+                <div class="small-10 small-offset-1 medium-8 medium-offset-2 large-6 large-offset-3 columns">
+                  <div class="input-group">
+                    <input type="text" value class="input-group-field" placeholder="Search by neighborhood, address or city" autocomplete="off">
+                    <div class="input-group-button">
+                      <button type="button" class="button js-button-search">Search</button>
+                    </div>
+                  </div>
+                  <div class="searchResults">
+                    <section class="breweryPage"></section>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="row small-4 small-offset-4 text-center columns">
-              <p> Your Weight </p>
-            </div>
-          </li>
+            </section>
+            <section class="aboutPage">
+            </section>
+            <section class="bacPage">
+              <div class="orbit small-8 float-center"  role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play false>
+                <ul class="orbit-container">
+                  <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+                  <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+                  <li class="orbit-slide">
+                    <div class=" row small-2 columns">
+                      <input type="number" id="drinksOutput">
+                    </div>
+                    <div class="small-4 columns small-offset-4">
+                      <div class="slider" data-slider data-initial-start="1" data-end="30">
+                        <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="drinksOutput"></span>
+                        <span class="slider-fill" data-slider-fill></span>
+                      </div>
+                   </div>
+                  <div class="row small-4 small-offset-4 text-center columns">
+                    <p> Number of Beers Consumed </p>
+                  </div>
+                </li>
+                <li class="orbit-slide">
+                  <div class=" row small-2 columns">
+                    <input type="number" id="percentageOutput">
+                  </div>
+                  <div class="small-4 columns small-offset-4">
+                    <div class="slider" data-slider data-initial-start="0" data-end="100">
+                      <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="percentageOutput"></span>
+                      <span class="slider-fill" data-slider-fill></span>
+                    </div>
+                  </div>
+                  <div class="row small-4 small-offset-4 text-center columns">
+                    <p> Average Alcohol Content Percentage </p>
+                  </div>
+                </li>
 
-          <li class="orbit-slide">
-            <div class=" row small-2 columns">
-              <input type="number" id="hoursOutput">
-            </div>
-            <div class="small-4 columns small-offset-4">
-              <div class="slider" data-slider data-initial-start="0" data-end="24">
-                <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="hoursOutput"></span>
-                <span class="slider-fill" data-slider-fill></span>
+                <li class="orbit-slide">
+                  <div class=" row small-2 columns">
+                    <input type="number" id="weightOutput">
+                  </div>
+                  <div class="small-4 columns small-offset-4">
+                    <div class="slider" data-slider data-initial-start="1" data-end="1000">
+                      <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="weightOutput"></span>
+                      <span class="slider-fill" data-slider-fill></span>
+                    </div>
+                  </div>
+                  <div class="row small-4 small-offset-4 text-center columns">
+                    <p> Your Weight </p>
+                  </div>
+                </li>
+
+                <li class="orbit-slide">
+                  <div class=" row small-2 columns">
+                    <input type="number" id="hoursOutput">
+                  </div>
+                  <div class="small-4 columns small-offset-4">
+                    <div class="slider" data-slider data-initial-start="0" data-end="24">
+                      <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="hoursOutput"></span>
+                      <span class="slider-fill" data-slider-fill></span>
+                    </div>
+                  </div>
+                  <div class="row small-4 small-offset-4 text-center columns">
+                    <p> Hours Consumed </p>
+                  </div>
+                </li>
+
+                <li class="orbit-slide">
+                  <div class=" row small-2 columns">
+                    <input type="number" id="bacVal">
+                  </div>
+
+                  <div class="row small-4 small-offset-4 text-center columns">
+                    <button type="submit" class="warning button" id = "bacSubmit">Calculate</button>
+                  </div>
+                </li>
+
+                </ul>
+
               </div>
-            </div>
-            <div class="row small-4 small-offset-4 text-center columns">
-              <p> Hours Consumed </p>
-            </div>
-          </li>
 
-          <li class="orbit-slide">
-            <div class=" row small-2 columns">
-              <input type="number" id="bacVal">
-            </div>
-
-            <div class="row small-4 small-offset-4 text-center columns">
-              <button type="submit" class="warning button" id = "bacSubmit">Calculate</button>
-            </div>
-          </li>
-
-          </ul>
-
+            </section>
+          </main>
         </div>
+      </div>
+    </div>
 
-      </section>
-    </main>
     <!-- Handlebars -->
     <script id="breweriesTemplate" type="text/x-handlebars-template">
       {{#unless is_closed}}

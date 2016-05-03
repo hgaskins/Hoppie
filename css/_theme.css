@@ -17,5 +17,14 @@
 }*/
 
 body {
-  background-color: #fc3;
+  background-color: black;
+}
+
+.off-canvas-content {
+  background: #fc3;
+  height: 100vmax;
+}
+
+.mobile-ofc {
+  background: black;
 }

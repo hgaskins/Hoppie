@@ -19,7 +19,9 @@
   };
 
   search.gotBreweries = function(data, message, xhr) {
-    if (!data.error) {
+    if (data.error) {
+      page.rediect('/');
+    } else {
       data.businesses.forEach(function(thisBusiness) {
         $('.breweryPage').append(render(thisBusiness));
       });

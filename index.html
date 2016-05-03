@@ -25,9 +25,9 @@
         <div class="row">
           <div class="small-10 small-offset-1 medium-8 medium-offset-2 large-6 large-offset-3 columns">
             <div class="input-group">
-              <input class="input-group-field" type="text">
+              <input type="text" value class="input-group-field" placeholder="Search by neighborhood, address or city" autocomplete="off">
               <div class="input-group-button">
-                <button type="button" class="button">Search</button>
+                <button type="button" class="button js-button-search">Search</button>
               </div>
             </div>
           </div>
@@ -128,7 +128,7 @@
             {{location.city}}, {{location.state_code}} {{location.postal_code}}
           </address>
           <img src="{{rating_img_url}}">
-          <a href="{{url}}">See more on Yelp</a>
+          <a href="{{url}}" target="_blank">See more on Yelp</a>
       </article>
     {{/unless}}
     </script>

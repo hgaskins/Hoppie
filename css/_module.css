@@ -1,0 +1,10 @@
+/*
+ * Foundation's off-canvas
+ */
+.off-canvas-wrapper-inner {
+  min-height: 100vh;
+}
+
+.off-canvas.position-right {
+  bottom: 0;
+}

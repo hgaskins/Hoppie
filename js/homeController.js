@@ -2,15 +2,19 @@
   var homeController = {};
 
   homeController.index = function() {
-    $('.homePage').show().siblings().hide();
+    var $homePage = $('.homePage');
+    $homePage.find('.searchResults').empty();
+    $homePage.show().siblings().hide();
+
+    $('.js-input-search').val('');
+    $('#offCavnas').foundation('close');
 
     $('.js-button-search').off('click').on('click', function () {
-      $button = $(this).parent('.input-group-button').siblings('.input-group-field');
-      var searchValue = $button.val().trim();
+      var $input = $(this).parent('.input-group-button').siblings('.input-group-field');
+      var searchValue = $input.val().trim();
 
       if (searchValue.length) {
         page.redirect('/breweries/' + searchValue.toLowerCase().replace(' ', '-'));
-        $button.val('');
       }
     });
   };

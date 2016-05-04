@@ -1,0 +1,62 @@
+/*
+ * Foundation's off-canvas
+ */
+.off-canvas-wrapper-inner {
+  min-height: 100vh;
+}
+
+.off-canvas.position-right {
+  bottom: 0;
+}
+
+/*
+ * Foundation's media object
+ */
+.media-object {
+  border-top: 1px solid #fff;
+  padding: 20px 0;
+  margin-bottom: 0;
+}
+
+.media-object:first-child {
+  border-top: none;
+}
+
+.media-object-section h1 {
+  line-height: normal;
+}
+
+.media-object-section img,
+.media-object-section p,
+.media-object-section address {
+  margin-bottom: 10px;
+}
+
+.media-object-section .rating-img {
+  width: 111px;
+  height: 20px;
+}
+
+.media-object-section p:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .media-object.stack-for-small .media-object-section {
+    padding-bottom: 0;
+  }
+
+  .media-object.stack-for-small .media-object-section img {
+      width: auto;
+  }
+
+  .media-object.stack-for-small .media-object-section img.brewery-img {
+    width: 100px;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .media-object h1 {
+    font-size: 2rem;
+  }
+}

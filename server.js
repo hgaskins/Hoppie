@@ -55,6 +55,30 @@ app.get('/api/yelp/', function (req, res) {
   });
 });
 
+app.get('/api/search', function (req, res) {
+  // SELECT
+  // read record
+  res.send('GET location');
+});
+
+app.post('/api/search', function (req, res) {
+  // INSERT
+  // create record
+  res.send('POST location');
+});
+
+app.put('/api/search', function (req, res) {
+  // UPDATE
+  // update record
+  res.send('PUT location');
+});
+
+app.delete('/api/search', function (req, res) {
+  // DELETE
+  // delete record
+  res.send('DELETE location');
+});
+
 app.get('/db', function (req, res) {
   pg.connect(process.env.DATABASE_URL, function (err, client, done) {
     // if (err) throw err;

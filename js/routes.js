@@ -4,6 +4,9 @@
     page.base('/');
 
     page('', homeController.index);
+    page('breweries', function() {
+      page.redirect('/');
+    });
     page('breweries/:location', breweriesController.index);
     page('about', aboutController.index);
     page('bac', bacController.index);

@@ -34,9 +34,22 @@ p, address{
   font-family:"proxima-nova",sans-serif;
 }
 
+audio {
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+}
+
 .aboutDescription {
   padding: 10px;
   margin: 20px;
+}
+
+.aboutUs a {
+  color: black;
+}
+.aboutUs a:hover {
+  color: #2199e8;
 }
 
 .aboutUs {
@@ -90,6 +103,13 @@ p, address{
   .dawgs {
     max-width: 100%;
     padding: 20px 150px 20px 150px;
+  }
+
+  @media screen and (max-width: 39.9375em) {
+    .dawgs {
+      max-width: 100%;
+      padding: 10px;
+    }
   }
 #bacSubmit {
   border-radius: 50%;

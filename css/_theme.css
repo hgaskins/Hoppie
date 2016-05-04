@@ -34,9 +34,19 @@ p, address{
   font-family:"proxima-nova",sans-serif;
 }
 
+.aboutDescription {
+  padding: 10px;
+  margin: 20px;
+}
+
+.aboutUs {
+  padding: 10px;
+  display: flex;
+}
+
 .dawgs {
-  width:30%;
-  border-radius:50%;
+  /*width: 50%;*/
+  margin: 10px auto;
 }
  .button {
    background-color: #41443E;
@@ -69,4 +79,16 @@ p, address{
 
 .slider-handle:hover{
   background-color: black;
+}
+
+@media screen and (max-width: 63.9375em) {
+  .aboutUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .dawgs {
+    max-width: 100%;
+    padding: 20px 150px 20px 150px;
+  }
 }

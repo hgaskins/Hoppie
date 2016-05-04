@@ -9,3 +9,7 @@ header {
 main {
   margin-bottom: 50px;
 }*/
+
+main + section {
+  display: none;
+}

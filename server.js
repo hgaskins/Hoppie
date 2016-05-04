@@ -42,7 +42,7 @@ var requestYelp = function (setParameters, callback) {
 app.get('/api/yelp/', function (req, res) {
   var searchParameters = {
     location: 'Portland+OR',
-    limit: 3,
+    limit: 10,
     category_filter: 'breweries'
   };
 
@@ -53,6 +53,46 @@ app.get('/api/yelp/', function (req, res) {
   requestYelp(searchParameters, function (error, response, body) {
     res.send(body);
   });
+});
+
+app.get('/api/search', function (req, res) {
+  // SELECT
+  // pg.connect(process.env.DATABASE_URL, function (err, client, done) {
+  //   client.query('SELECT id, term FROM track_search WHERE term LIKE $1 ORDER BY date DESC LIMIT 3', [req.query.term], function(err, result) {
+  //     done();
+  //     if (err) {
+  //       console.error(err); res.send('Error ' + err);
+  //     } else {
+  //       res.send(result.rows);
+  //     }
+  //   });
+  // });
+});
+
+app.post('/api/search', function (req, res) {
+  // INSERT
+  // pg.connect(process.env.DATABASE_URL, function (err, client, done) {
+  //   client.query('INSERT INTO track_search (term, date) VALUES ($1, NOW())', [req.query.term], function(err, result) {
+  //     done();
+  //     if (err) {
+  //       console.error(err); res.send('Error ' + err);
+  //     } else {
+  //       res.send(result.rows);
+  //     }
+  //   });
+  // });
+});
+
+app.put('/api/search', function (req, res) {
+  // UPDATE
+  // update record
+  res.send('PUT location');
+});
+
+app.delete('/api/search', function (req, res) {
+  // DELETE
+  // delete record
+  res.send('DELETE location');
 });
 
 app.get('/db', function (req, res) {

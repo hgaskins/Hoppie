@@ -8,6 +8,10 @@
   margin-top: 40px;
 }
 
+.searchResults {
+  margin-top: 20px;
+}
+
 .js-off-canvas-exit {
   background: hsla(0,0%,100%,0);
 }

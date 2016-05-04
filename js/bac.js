@@ -1,5 +1,15 @@
 // (function(module) {
 
+
+  var button = $('#bacSubmit');
+  var audio = $('audio');
+  var bacOutput = $('#bacVal');
+
+  function unpress(){
+    button.removeClass('pressed');
+  }
+
+
   $('#bacSubmit').on('click' , function () {
     var drink = $('#drinksOutput').val();
     var percent = $('#percentageOutput').val();
@@ -8,12 +18,21 @@
     var bacTotal = ((drink * 12 * percent * 0.075 / weights) - (hour * 0.015));
     var bac = Math.round(bacTotal * 100) / 100;
     if (bac < 0){
-      $('#bacVal').val(0);
+      bacOutput.text('BAC = 0%');
     }
     else {
-      $('#bacVal').val(bac);
+      bacOutput.text('BAC = ' + bac + '%');
     }
+    audio.get(0).play();
+    button.addClass('pressed');
+    setTimeout(unpress,3000);
+
   });
+
+
+
+
+
 
 
 //   module.Bac = Bac;

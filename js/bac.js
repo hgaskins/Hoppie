@@ -1,5 +1,9 @@
 // (function(module) {
 
+  function unpress(){
+    $('#bacSubmit').removeClass("pressed");
+  }
+
   $('#bacSubmit').on('click' , function () {
     var drink = $('#drinksOutput').val();
     var percent = $('#percentageOutput').val();
@@ -13,7 +17,15 @@
     else {
       $('#bacVal').val(bac);
     }
+    $('#bacSubmit').addClass('pressed');
+    setTimeout(unpress,3000);
+
   });
+
+
+
+
+
 
 
 //   module.Bac = Bac;

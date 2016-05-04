@@ -84,15 +84,29 @@ app.post('/api/search', function (req, res) {
 });
 
 app.put('/api/search', function (req, res) {
-  // UPDATE
-  // update record
-  res.send('PUT location');
+  // pg.connect(process.env.DATABASE_URL, function (err, client, done) {
+  //   client.query('UPDATE track_search SET term = $1 WHERE id = $2', [req.query.term, req.query.id], function(err, result) {
+  //     done();
+  //     if (err) {
+  //       console.error(err); res.send('Error ' + err);
+  //     } else {
+  //       res.send(result.rows);
+  //     }
+  //   });
+  // });
 });
 
 app.delete('/api/search', function (req, res) {
-  // DELETE
-  // delete record
-  res.send('DELETE location');
+  // pg.connect(process.env.DATABASE_URL, function (err, client, done) {
+  //   client.query('DELETE FROM track_search WHERE id = $1', [req.query.id], function(err, result) {
+  //     done();
+  //     if (err) {
+  //       console.error(err); res.send('Error ' + err);
+  //     } else {
+  //       res.send(result.rows);
+  //     }
+  //   });
+  // });
 });
 
 app.get('/db', function (req, res) {

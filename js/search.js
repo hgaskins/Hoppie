@@ -53,5 +53,28 @@
     }
   };
 
+  search.deleteTerm = function(id) {
+    $.ajax({
+      url: '/api/search',
+      type: 'DELETE',
+      data: { id: id }
+      // dataType: 'json'
+    }).done(function(data, message, xhr) {
+      console.log(data);
+    });
+  };
+
+  search.updateTerm = function(term, id) {
+    $.ajax({
+      url: '/api/search',
+      type: 'PUT',
+      data: { id: id, term: term }
+      // dataType: 'json'
+    }).done(function(data, message, xhr) {
+      console.log(data);
+    });
+  };
+
+
   module.search = search;
 })(window);

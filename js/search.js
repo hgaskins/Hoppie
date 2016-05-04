@@ -26,6 +26,7 @@
       // dataType: 'json'
     }).done(function(data, message, xhr) {
       console.log(data);
+      console.log('🍞');
     });
   };
 
@@ -41,8 +42,6 @@
       console.log(data);
     });
   };
-
-  search.addTerm('awholenewthing');
 
   search.gotBreweries = function(data, message, xhr) {
     if (data.error) {

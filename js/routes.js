@@ -7,6 +7,9 @@
     page('breweries/:location', breweriesController.index);
     page('about', aboutController.index);
     page('bac', bacController.index);
+    page('*', function() {
+      page.redirect('/');
+    });
 
     page();
   };

@@ -12,10 +12,10 @@
     var bacTotal = ((drink * 12 * percent * 0.075 / weights) - (hour * 0.015));
     var bac = Math.round(bacTotal * 100) / 100;
     if (bac < 0){
-      $('#bacVal').val(0);
+      $('#bacVal').text('BAC = 0%');
     }
     else {
-      $('#bacVal').text('BAC = ' + bac);
+      $('#bacVal').text('BAC = ' + bac + '%');
     }
     $('#bacSubmit').addClass('pressed');
     setTimeout(unpress,3000);

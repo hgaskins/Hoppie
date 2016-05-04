@@ -23,7 +23,7 @@
       page.redirect('/');
     } else {
       data.businesses.forEach(function(thisBusiness) {
-        $('.breweryPage').append(render(thisBusiness));
+        $('.searchResults').append(render(thisBusiness));
       });
     }
   };

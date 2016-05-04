@@ -53,17 +53,38 @@
                 </div>
               </div>
             </section>
-            <section class="aboutPage">
-              <h2> About Hoppie </h2>
-              <p> This spot I need text so I can do some stuff and party sometimes and stuff so I need to put some stuff right here so we have some kewl text here and it looks super kewl and stuff and yeah so this section will have some things and some doo dads and stuff so we can have some things and some stuff here for our about stuff things and stuff and i like to party and yeah so we are going to do this kewl app and drink some kewl beer and stuff blah blah blah blah </p>
+            <section class="aboutPage row">
+              <div class="aboutDescription text-center">
+                <h2> About Hoppie </h2>
+                <p class="text-left"> Hoppie came about when Hannah, Johnny, and Randy needed a project to hone their coding skills. They discused what they had learned over a beer - AJAX calls, css styling, semantic HTML, single page apps with routing, web SQL, MVC structure, and more. They racked their brains as to what they would code about while drinking their cold brews. Suddenly it became easy, they thought of a friendly sinlge page app that would let them know the best local breweries in the area as well as a BAC calculator to get home safe. The rest is history. </p>
 
-              <img class="dawgs" src="img/dawg1.jpg">
-              <p> Stuff goes here and stuff so this is where stuff will go and i like to party err day yo and stuff will go here all the time and i like to party and stuff so yeah here is some content </p>
-              <img class="dawgs" src="img/dawg2.jpg">
-              <p> Stuff goes here and stuff so this is where stuff will go and i like to party err day yo and stuff will go here all the time and i like to party and stuff so yeah here is some content </p>
-              <img class="dawgs" src="img/dawg3.jpg">
-              <p> Stuff goes here and stuff so this is where stuff will go and i like to party err day yo and stuff will go here all the time and i like to party and stuff so yeah here is some content </p>
+              </div>
+              <h2 class="text-center"> Meet the Devs </h2>
+              <div class="row aboutUs">
 
+                <div class="large-4 columns">
+                  <img class="dawgs" src="/img/dawg1.jpg">
+                  <h4>Hannah Gaskins</h4>
+                  <p> Hannah is a student at Code Fellows with imbitions for IOS development. When she is not studying Objective-C, Swift, and Web Dev, she does yoga, rides bikes, plays guitars and pianos and takes her Golden Doodle Roo for walks. Her favorite beer is a tie between Hoegaarden and Phreim.</p>
+                  <a target="_blank" href="https://www.linkedin.com/in/hannahgaskins"><i class="fi-social-linkedin medium"></i></a>
+                </div>
+                <div class="large-4 columns">
+                  <img class="dawgs" src="/img/dawg4.jpg">
+                  <h4>Johnny Luangphasy</h4>
+                  <p> Johnny is a web master with experience in PHP web development. He is set to graduate Code Fellows 401 in flying colors to be a ninja full stack developer. Johnny also moonlights as a break dancer! His favorite beer is BeerLao.</p>
+                  <a target="_blank" href="https://www.linkedin.com/in/randygylling">
+                  <i class="fi-social-linkedin medium"></i></a>
+                </div>
+                <div class="large-4 columns">
+                  <img class="dawgs" src="/img/dawg3.jpg">
+                  <h4>Randy Gylling</h4>
+                  <p> Randy is problem solver with previous experience as an engineer. He loves making his apps look beutiful and has an eye for design as well as functionality. After Code Fellows, he will expand his skills to come out a Full Stack JavaScript Developer. When he is not in front of a computer he plays the guitar and rides motorcycle. His favorite beer is New Castle.</p>
+                  <a target="_blank" href="https://www.linkedin.com/in/jluangphasy">
+                  <i class="fi-social-linkedin medium"></i></a>
+                </div>
+              </div>
+
+              <h2 class="text-center">Just for Fun - Mouth Prepare to Water</h2>
               <audio controls>
 
                 <source src="http://sheav.se/sounds/beer-sound-begin.mp3">
@@ -92,7 +113,7 @@
                       </div>
                    </div>
                   <div class="row small-4 small-offset-4 text-center columns">
-                    <p> Number of Beers Consumed </p>
+                    <h4 class="fontoverride"> Number of Beers Consumed </h4>
                   </div>
                 </li>
                 <li class="orbit-slide">
@@ -106,7 +127,7 @@
                     </div>
                   </div>
                   <div class="row small-4 small-offset-4 text-center columns">
-                    <p> Average Alcohol Content Percentage </p>
+                    <h4 class="fontoverride"> Average Alcohol Content Percentage </h4>
                   </div>
                 </li>
 
@@ -121,7 +142,7 @@
                     </div>
                   </div>
                   <div class="row small-4 small-offset-4 text-center columns">
-                    <p> Your Weight </p>
+                    <h4 class="fontoverride"> Your Weight </h4>
                   </div>
                 </li>
 
@@ -136,17 +157,18 @@
                     </div>
                   </div>
                   <div class="row small-4 small-offset-4 text-center columns">
-                    <p> Hours Consumed </p>
+                    <h4 class="fontoverride"> Hours Consumed </h4>
                   </div>
                 </li>
 
                 <li class="orbit-slide">
                   <div class=" row small-2 columns">
-                    <input type="number" id="bacVal">
+                    <h1 id="bacVal" class="text-center"></h1>
                   </div>
 
                   <div class="row small-4 small-offset-4 text-center columns">
-                    <button type="submit" class="warning button" id = "bacSubmit">Calculate</button>
+                    <button id="bacSubmit"><span>Calculate</span></button>
+
                   </div>
                 </li>
 

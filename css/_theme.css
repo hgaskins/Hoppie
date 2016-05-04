@@ -34,6 +34,10 @@ p, address{
   font-family:"proxima-nova",sans-serif;
 }
 
+.fontoverride {
+  font-family:"proxima-nova",sans-serif;
+}
+
 .dawgs {
   width:30%;
   border-radius:50%;
@@ -79,8 +83,8 @@ p, address{
   color: white;
   font-family: "fatfrank",sans-serif;
   font-size: 1rem;
-  background: #41443E;
-  box-shadow: 0 8px 0 rgb(51, 54, 48),
+  background: black;
+  box-shadow: 0 8px 0 rgba(38, 38, 38,0.7),
     0 15px 20px rgba(0,0,0,.35);
   text-transform: uppercase;
   transition: .4s all ease-in;
@@ -89,11 +93,18 @@ p, address{
   -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-#bacSubmit span { position: relative; }
+#bacSubmit span {
+   position: relative;
+   color:#F6C534;
+ }
 
 .pressed {
   padding-top: 3px;
   transform: translateY(4px);
-  box-shadow: 0 4px 0 rgb(51, 54, 48),
+  box-shadow: 0 4px 0 rgb(38, 38, 38),
     0 8px 6px rgba(0,0,0,.45)!important;
+}
+
+.orbit-next:active, .orbit-next:focus, .orbit-next:hover, .orbit-previous:active, .orbit-previous:focus, .orbit-previous:hover  {
+  background-color:#fc3;
 }

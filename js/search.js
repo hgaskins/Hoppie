@@ -18,6 +18,32 @@
     }).done(next);
   };
 
+  search.getTerms = function(term) {
+    $.ajax({
+      url: '/api/search',
+      type: 'GET',
+      data: { term: term }
+      // dataType: 'json'
+    }).done(function(data, message, xhr) {
+      console.log(data);
+    });
+  };
+
+  search.getTerms('something');
+
+  search.addTerm = function(term) {
+    $.ajax({
+      url: '/api/search',
+      type: 'POST',
+      data: { term: term }
+      // dataType: 'json'
+    }).done(function(data, message, xhr) {
+      console.log(data);
+    });
+  };
+
+  search.addTerm('awholenewthing');
+
   search.gotBreweries = function(data, message, xhr) {
     if (data.error) {
       page.redirect('/');

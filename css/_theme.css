@@ -51,3 +51,22 @@ p, address{
  i {
    font-size: 30px;
  }
+
+ .orbit-next{
+   font-size:50px;
+   color:black;
+ }
+
+ .orbit-previous {
+   font-size:50px;
+   color:black;
+ }
+
+ .slider-handle {
+   background-color:black;
+ }
+
+
+.slider-handle:hover{
+  background-color: black;
+}

@@ -1,0 +1,17 @@
+.logo a {
+  display: inline-block;
+}
+
+.logo img {
+  width: 100%;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+.searchResults {
+  margin-top: 20px;
+}
+
+.js-off-canvas-exit {
+  background: hsla(0,0%,100%,0);
+}

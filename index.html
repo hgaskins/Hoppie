@@ -3,44 +3,210 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoppie</title>
+    <link rel="shortcut icon" href="/img/hoppieFavicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/hoppieFavicon.png">
+    <meta name="apple-mobile-web-app-title" content="Hoppie">
     <link rel="stylesheet" href="/css/master.css">
+    <script src="https://use.typekit.net/elh4gma.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
-  <body class="fullBackgroundImage">
-    <header>
-      <hgroup>
-        <h1>Hoppie</h1>
-        <h2>Find breweries near your area</h2>
-      </hgroup>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/bac">BAC</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="homePage">
-        <div class="row">
-          <div class="small-10 small-offset-1 medium-8 medium-offset-2 large-6 large-offset-3 columns">
-            <div class="input-group">
-              <input class="input-group-field" type="text">
-              <div class="input-group-button">
-                <button type="button" class="button">Search</button>
+  <body>
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        <div class="off-canvas position-right" data-position="right" id="offCavnas" data-off-canvas>
+          <ul class="vertical menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/bac">BAC Calculator</a></li>
+          </ul>
+        </div>
+        <div class="off-canvas-content" data-off-canvas-content>
+          <header>
+            <button class="button float-right hamb" type="button" data-toggle="offCavnas" aria-expanded="false" aria-controls="offCanvas"><i class="fi-list medium"></i></button>
+            <div class="row">
+              <div class="small-10 small-offset-1 medium-8 medium-offset-2 large-6 large-offset-3 columns">
+                <div class="logo text-center">
+                  <a href="/">
+                    <img src="/img/hoppieLogoTwo.svg">
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          </header>
+          <main>
+            <section class="homePage">
+              <div class="row">
+                <div class="columns medium-8 medium-offset-2">
+                  <div class="input-group">
+                    <input type="text" value class="input-group-field js-input-search" placeholder="Search by neighborhood, address or city" autocomplete="off">
+                    <div class="input-group-button">
+                      <button type="button" class="button js-button-search">Search</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="columns small-10 small-offset-1">
+                  <div class="searchResults"></div>
+                </div>
+              </div>
+            </section>
+            <section class="aboutPage row">
+              <div class="aboutDescription text-center">
+                <h2> About Hoppie </h2>
+                <p class="text-left"> Hoppie came about when Hannah, Johnny, and Randy needed a project to hone their coding skills. They discused what they had learned over a beer - AJAX calls, css styling, semantic HTML, single page apps with routing, web SQL, MVC structure, and more. They racked their brains as to what they would code about while drinking their cold brews. Suddenly it became easy, they thought of a friendly sinlge page app that would let them know the best local breweries in the area as well as a BAC calculator to get home safe. The rest is history. </p>
+
+              </div>
+              <h2 class="text-center"> Meet the Devs </h2>
+              <div class="row aboutUs">
+
+                <div class="large-4 columns">
+                  <img class="dawgs" src="/img/dawg1.jpg">
+                  <h4>Hannah Gaskins</h4>
+                  <p> Hannah is a student at Code Fellows with imbitions for IOS development. When she is not studying Objective-C, Swift, and Web Dev, she does yoga, rides bikes, plays guitars and pianos and takes her Golden Doodle Roo for walks. Her favorite beer is a tie between Hoegaarden and Phreim.</p>
+                  <a target="_blank" href="https://www.linkedin.com/in/hannahgaskins"><i class="fi-social-linkedin medium"></i></a>
+                </div>
+                <div class="large-4 columns">
+                  <img class="dawgs" src="/img/dawg4.jpg">
+                  <h4>Johnny Luangphasy</h4>
+                  <p> Johnny is a web master with experience in PHP web development. He is set to graduate Code Fellows 401 in flying colors to be a ninja full stack developer. Johnny also moonlights as a break dancer! His favorite beer is BeerLao.</p>
+                  <a target="_blank" href="https://www.linkedin.com/in/randygylling">
+                  <i class="fi-social-linkedin medium"></i></a>
+                </div>
+                <div class="large-4 columns">
+                  <img class="dawgs" src="/img/dawg3.jpg">
+                  <h4>Randy Gylling</h4>
+                  <p> Randy is problem solver with previous experience as an engineer. He loves making his apps look beutiful and has an eye for design as well as functionality. After Code Fellows, he will expand his skills to come out a Full Stack JavaScript Developer. When he is not in front of a computer he plays the guitar and rides motorcycle. His favorite beer is New Castle.</p>
+                  <a target="_blank" href="https://www.linkedin.com/in/jluangphasy">
+                  <i class="fi-social-linkedin medium"></i></a>
+                </div>
+              </div>
+
+              <h2 class="text-center">Just for Fun - Mouth Prepare to Water</h2>
+              <audio controls>
+
+                <source src="http://sheav.se/sounds/beer-sound-begin.mp3">
+              Your browser does not support the audio element.
+              </audio>
+
+
+
+
+
+
+            </section>
+            <section class="bacPage">
+              <div class="orbit small-8 float-center"  role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play false>
+                <ul class="orbit-container">
+                  <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+                  <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+                  <li class="orbit-slide">
+                    <div class=" row small-2 columns">
+                      <input type="number" id="drinksOutput">
+                    </div>
+                    <div class="small-4 columns small-offset-4">
+                      <div class="slider" data-slider data-initial-start="1" data-end="30">
+                        <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="drinksOutput"></span>
+                        <span class="slider-fill" data-slider-fill></span>
+                      </div>
+                   </div>
+                  <div class="row small-4 small-offset-4 text-center columns">
+                    <h4 class="fontoverride"> Number of Beers Consumed </h4>
+                  </div>
+                </li>
+                <li class="orbit-slide">
+                  <div class=" row small-2 columns">
+                    <input type="number" id="percentageOutput">
+                  </div>
+                  <div class="small-4 columns small-offset-4">
+                    <div class="slider" data-slider data-initial-start="0" data-end="100">
+                      <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="percentageOutput"></span>
+                      <span class="slider-fill" data-slider-fill></span>
+                    </div>
+                  </div>
+                  <div class="row small-4 small-offset-4 text-center columns">
+                    <h4 class="fontoverride"> Average Alcohol Content Percentage </h4>
+                  </div>
+                </li>
+
+                <li class="orbit-slide">
+                  <div class=" row small-2 columns">
+                    <input type="number" id="weightOutput">
+                  </div>
+                  <div class="small-4 columns small-offset-4">
+                    <div class="slider" data-slider data-initial-start="1" data-end="1000">
+                      <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="weightOutput"></span>
+                      <span class="slider-fill" data-slider-fill></span>
+                    </div>
+                  </div>
+                  <div class="row small-4 small-offset-4 text-center columns">
+                    <h4 class="fontoverride"> Your Weight </h4>
+                  </div>
+                </li>
+
+                <li class="orbit-slide">
+                  <div class=" row small-2 columns">
+                    <input type="number" id="hoursOutput">
+                  </div>
+                  <div class="small-4 columns small-offset-4">
+                    <div class="slider" data-slider data-initial-start="0" data-end="24">
+                      <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="hoursOutput"></span>
+                      <span class="slider-fill" data-slider-fill></span>
+                    </div>
+                  </div>
+                  <div class="row small-4 small-offset-4 text-center columns">
+                    <h4 class="fontoverride"> Hours Consumed </h4>
+                  </div>
+                </li>
+
+                <li class="orbit-slide">
+                  <div class=" row small-2 columns">
+                    <h1 id="bacVal" class="text-center"></h1>
+                  </div>
+
+                  <div class="row small-4 small-offset-4 text-center columns">
+                    <button id="bacSubmit"><span>Calculate</span></button>
+
+                  </div>
+                </li>
+
+                </ul>
+
+              </div>
+
+            </section>
+          </main>
         </div>
-      </section>
-      <section class="breweryPage">
-      </section>
-      <section class="aboutPage">
-      </section>
-      <section class="bacPage">
-      </section>
-    </main>
+      </div>
+    </div>
+
+    <!-- Handlebars -->
+    <script id="breweriesTemplate" type="text/x-handlebars-template">
+      {{#unless is_closed}}
+        <article class="media-object stack-for-small">
+          <div class="media-object-section">
+            <img class="brewery-img" src="{{#if image_url}}{{image_url}}{{else}}/img/hoppieLogoTwo.svg{{/if}}" alt width="100" height="100">
+          </div>
+          <div class="media-object-section">
+            <h1>{{name}}</h1>
+            <img class="rating-img" src="{{rating_img_url_large}}" alt width="111" height="20">
+            {{#if snippet_text}}
+              <p>{{snippet_text}}</p>
+            {{/if}}
+            {{#if display_phone}}
+              <p>{{display_phone}}</p>
+            {{/if}}
+            <address>
+              {{location.address}}<br>
+              {{location.city}}, {{location.state_code}} {{location.postal_code}}
+            </address>
+            <p><a href="{{url}}" target="_blank">See more on Yelp</a></p>
+          </div>
+        </article>
+      {{/unless}}
+    </script>
     <script src="/vendor/jquery/jquery.js"></script>
     <script src="/vendor/handlebars/handlebars.js"></script>
     <script src="/vendor/html5sql/html5sql.js"></script>
@@ -48,12 +214,15 @@
     <script src="/vendor/foundation/what-input.js"></script>
     <script src="/vendor/foundation/foundation.min.js"></script>
     <script src="/js/webDatabase.js"></script>
-    <script src="/js/app.js"></script>
     <script src="/js/search.js"></script>
     <script src="/js/homeView.js"></script>
     <script src="/js/homeController.js"></script>
+    <script src="/js/breweriesView.js"></script>
+    <script src="/js/breweriesController.js"></script>
+    <script src="/js/aboutController.js"></script>
     <script src="/js/bac.js"></script>
     <script src="/js/bacView.js"></script>
     <script src="/js/bacController.js"></script>
+    <script src="/js/routes.js"></script>
   </body>
 </html>

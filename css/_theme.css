@@ -1,4 +1,4 @@
-.fullBackgroundImage:before {
+/*.fullBackgroundImage:before {
   background-image: url('/img/beerhome.gif');
   background-position: center;
   background-repeat: no-repeat;
@@ -14,4 +14,138 @@
   -webkit-filter: contrast(0.9) brightness(0.5);
   filter: contrast(0.9) brightness(0.5);
   z-index: -1;
+}*/
+
+body {
+  background-color: #fc3;
+}
+
+.off-canvas-content {
+  background: #fc3;
+  height: 100%;
+  box-shadow: none;
+}
+
+.off-canvas {
+  background: #41443E;
+}
+
+p, address{
+  font-family:"proxima-nova",sans-serif;
+}
+
+
+audio {
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+
+
+.fontoverride {
+  font-family:"proxima-nova",sans-serif;
+}
+
+.aboutDescription {
+  padding: 10px;
+  margin: 20px;
+}
+
+.aboutUs a {
+  color: black;
+}
+.aboutUs a:hover {
+  color: #2199e8;
+}
+
+.aboutUs {
+  padding: 10px;
+  display: flex;
+}
+
+.dawgs {
+  /*width: 50%;*/
+  margin: 10px auto;
+}
+ .button {
+   background-color: #41443E;
+   font-family: "fatfrank",sans-serif;
+ }
+
+ a {
+   color: #FEFEFE;
+   font-family: "fatfrank",sans-serif;
+ }
+
+ i {
+   font-size: 30px;
+ }
+
+ .orbit-next{
+   font-size:50px;
+   color:black;
+ }
+
+ .orbit-previous {
+   font-size:50px;
+   color:black;
+ }
+
+ .slider-handle {
+   background-color:black;
+ }
+
+
+.slider-handle:hover{
+  background-color: black;
+}
+
+@media screen and (max-width: 63.9375em) {
+  .aboutUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .dawgs {
+    max-width: 100%;
+    padding: 20px 150px 20px 150px;
+  }
+
+  @media screen and (max-width: 39.9375em) {
+    .dawgs {
+      max-width: 100%;
+      padding: 10px;
+    }
+  }
+#bacSubmit {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: none;
+  color: white;
+  font-family: "fatfrank",sans-serif;
+  font-size: 1rem;
+  background: black;
+  box-shadow: 0 8px 0 rgba(38, 38, 38,0.7),
+    0 15px 20px rgba(0,0,0,.35);
+  text-transform: uppercase;
+  transition: .4s all ease-in;
+  outline: none;
+  text-align: center;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+#bacSubmit span {
+   position: relative;
+   color:#F6C534;
+ }
+
+.pressed {
+  padding-top: 3px;
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 rgb(38, 38, 38),
+    0 8px 6px rgba(0,0,0,.45)!important;
+}
+
+.orbit-next:active, .orbit-next:focus, .orbit-next:hover, .orbit-previous:active, .orbit-previous:focus, .orbit-previous:hover  {
+  background-color:#fc3;
 }

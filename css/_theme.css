@@ -39,7 +39,7 @@ audio {
   width: 100%;
   margin: 0 auto;
   padding: 50px;
-
+}
 
 .fontoverride {
   font-family:"proxima-nova",sans-serif;
@@ -109,13 +109,15 @@ audio {
     max-width: 100%;
     padding: 20px 150px 20px 150px;
   }
+}
 
-  @media screen and (max-width: 39.9375em) {
-    .dawgs {
-      max-width: 100%;
-      padding: 10px;
-    }
+@media screen and (max-width: 39.9375em) {
+  .dawgs {
+    max-width: 100%;
+    padding: 10px;
   }
+}
+
 #bacSubmit {
   border-radius: 50%;
   width: 100px;
@@ -134,6 +136,7 @@ audio {
   -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+
 #bacSubmit span {
    position: relative;
    color:#F6C534;

@@ -12,40 +12,15 @@
 
     $.ajax({
       url: '/api/yelp/',
-      type: 'GET',
+      method: 'GET',
       data: { location: searchLocation },
       dataType: 'json'
     }).done(next);
   };
 
-  search.getTerms = function(term) {
-    $.ajax({
-      url: '/api/search',
-      type: 'GET',
-      data: { term: term }
-      // dataType: 'json'
-    }).done(function(data, message, xhr) {
-      console.log(data);
-      console.log('🍞');
-    });
-  };
-
-  search.getTerms('something');
-
-  search.addTerm = function(term) {
-    $.ajax({
-      url: '/api/search',
-      type: 'POST',
-      data: { term: term }
-      // dataType: 'json'
-    }).done(function(data, message, xhr) {
-      console.log(data);
-    });
-  };
-
   search.gotBreweries = function(data, message, xhr) {
     if (data.error) {
-      page.redirect('/');
+      $('.searchResults').html('<p class="text-center">' + data.error.text + '</p>');
     } else {
       data.businesses.forEach(function(thisBusiness) {
         $('.searchResults').append(render(thisBusiness));
@@ -53,12 +28,35 @@
     }
   };
 
+  search.getTerms = function(term) {
+    $.ajax({
+      url: '/api/search',
+      method: 'GET',
+      data: { term: term },
+      dataType: 'json'
+    }).done(function(data, message, xhr) {
+      console.log(data);
+      console.log('🍞');
+    });
+  };
+
+  search.addTerm = function(term) {
+    $.ajax({
+      url: '/api/search',
+      method: 'POST',
+      data: { term: term },
+      dataType: 'json'
+    }).done(function(data, message, xhr) {
+      console.log(data);
+    });
+  };
+
   search.deleteTerm = function(id) {
     $.ajax({
       url: '/api/search',
-      type: 'DELETE',
-      data: { id: id }
-      // dataType: 'json'
+      method: 'DELETE',
+      data: { id: id },
+      dataType: 'json'
     }).done(function(data, message, xhr) {
       console.log(data);
     });
@@ -67,14 +65,13 @@
   search.updateTerm = function(term, id) {
     $.ajax({
       url: '/api/search',
-      type: 'PUT',
-      data: { id: id, term: term }
-      // dataType: 'json'
+      method: 'PUT',
+      data: { id: id, term: term },
+      dataType: 'json'
     }).done(function(data, message, xhr) {
       console.log(data);
     });
   };
-
 
   module.search = search;
 })(window);

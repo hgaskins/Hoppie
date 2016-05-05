@@ -6,8 +6,12 @@ var request = require('request');
 var queryString = require('querystring');
 var lodash = require('lodash');
 var pg = require('pg');
+var bodyParser = require('body-parser');
 var port = process.env.PORT || 3000;
 var app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 var requestYelp = function (setParameters, callback) {
   var httpMethod = 'GET';
@@ -39,7 +43,7 @@ var requestYelp = function (setParameters, callback) {
   });
 };
 
-app.get('/api/yelp/', function (req, res) {
+app.get('/api/yelp', function (req, res) {
   var searchParameters = {
     location: 'Portland+OR',
     limit: 10,
@@ -55,73 +59,83 @@ app.get('/api/yelp/', function (req, res) {
   });
 });
 
+// CREATE TABLE track_search (id SERIAL PRIMARY KEY, term varchar(255), timestamp_added timestamp);
+// INSERT INTO track_search (term, timestamp_added) VALUES ('Portland', CURRENT_TIMESTAMP);
+// SELECT id, term, timestamp_added FROM track_search;
+
 app.get('/api/search', function (req, res) {
-  // SELECT
-  // pg.connect(process.env.DATABASE_URL, function (err, client, done) {
-  //   client.query('SELECT id, term FROM track_search WHERE term LIKE $1 ORDER BY date DESC LIMIT 3', [req.query.term], function(err, result) {
-  //     done();
-  //     if (err) {
-  //       console.error(err); res.send('Error ' + err);
-  //     } else {
-  //       res.send(result.rows);
-  //     }
-  //   });
-  // });
+  pg.connect(process.env.DATABASE_URL, function (err, client, done) {
+    if (err) {
+      return console.error('error fetching client from pool', err);
+    }
+
+    client.query('SELECT id, term FROM track_search WHERE term ILIKE $1 ORDER BY timestamp_added DESC LIMIT 3', ['%'+req.query.term+'%'], function(err, result) {
+      done();
+
+      if (err) {
+        return console.error('error running query', err);
+      }
+
+      res.send(result.rows);
+      client.end();
+    });
+  });
 });
 
 app.post('/api/search', function (req, res) {
-  // INSERT
-  // pg.connect(process.env.DATABASE_URL, function (err, client, done) {
-  //   client.query('INSERT INTO track_search (term, date) VALUES ($1, NOW())', [req.query.term], function(err, result) {
-  //     done();
-  //     if (err) {
-  //       console.error(err); res.send('Error ' + err);
-  //     } else {
-  //       res.send(result.rows);
-  //     }
-  //   });
-  // });
+  pg.connect(process.env.DATABASE_URL, function (err, client, done) {
+    if (err) {
+      return console.error('error fetching client from pool', err);
+    }
+
+    client.query('INSERT INTO track_search (term, timestamp_added) VALUES ($1, CURRENT_TIMESTAMP)', [req.body.term], function(err, result) {
+      done();
+
+      if (err) {
+        return console.error('error running query', err);
+      }
+
+      res.send(result.rows);
+      client.end();
+    });
+  });
 });
 
 app.put('/api/search', function (req, res) {
-  // pg.connect(process.env.DATABASE_URL, function (err, client, done) {
-  //   client.query('UPDATE track_search SET term = $1 WHERE id = $2', [req.query.term, req.query.id], function(err, result) {
-  //     done();
-  //     if (err) {
-  //       console.error(err); res.send('Error ' + err);
-  //     } else {
-  //       res.send(result.rows);
-  //     }
-  //   });
-  // });
+  pg.connect(process.env.DATABASE_URL, function (err, client, done) {
+    if (err) {
+      return console.error('error fetching client from pool', err);
+    }
+
+    client.query('UPDATE track_search SET term=$1 WHERE id=$2', [req.body.term, req.body.id], function(err, result) {
+      done();
+
+      if (err) {
+        return console.error('error running query', err);
+      }
+
+      res.send(result.rows);
+      client.end();
+    });
+  });
 });
 
 app.delete('/api/search', function (req, res) {
-  // pg.connect(process.env.DATABASE_URL, function (err, client, done) {
-  //   client.query('DELETE FROM track_search WHERE id = $1', [req.query.id], function(err, result) {
-  //     done();
-  //     if (err) {
-  //       console.error(err); res.send('Error ' + err);
-  //     } else {
-  //       res.send(result.rows);
-  //     }
-  //   });
-  // });
-});
-
-app.get('/db', function (req, res) {
   pg.connect(process.env.DATABASE_URL, function (err, client, done) {
-    // if (err) throw err;
-    // console.log('Connected to postgres! Getting schemas...');
+    if (err) {
+      return console.error('error fetching client from pool', err);
+    }
 
-    // client.query('SELECT * FROM test_table', function(err, result) {
-    //   done();
-    //   if (err) {
-    //     console.error(err); res.send('Error ' + err);
-    //   } else {
-    //     res.send(result.rows);
-    //   }
-    // });
+    client.query('DELETE FROM track_search WHERE id=$1', [req.body.id], function(err, result) {
+      done();
+
+      if (err) {
+        return console.error('error running query', err);
+      }
+
+      res.send(result.rows);
+      client.end();
+    });
   });
 });
 

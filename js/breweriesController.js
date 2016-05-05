@@ -15,6 +15,9 @@
 
       if (searchValue.length) {
         page.redirect('/breweries/' + searchValue.toLowerCase().replace(' ', '-'));
+      } else {
+        $('.searchResults').html('');
+        page.redirect('/');
       }
     });
 

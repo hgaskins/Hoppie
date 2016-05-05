@@ -3,7 +3,7 @@
   routes.setMapping = function() {
     page.base('/');
 
-    page('', homeController.index);
+    page('',breweriesController.index);
     page('breweries', function() {
       page.redirect('/');
     });

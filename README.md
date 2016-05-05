@@ -1,4 +1,5 @@
-# Hoppie
+# [Hoppie]("http://hoppieapp.herokuapp.com")
+
 <b>Team Name</b>: Hoppies
 
 <b>Team Members</b>: [Hannah Gaskins]("https://github.com/hnag409"), [Randy Gulling]("https://github.com/rgylling"), [Johnny Luangphasy]("https://github.com/jluangphasy")
@@ -19,10 +20,10 @@ about different types of beers. The app will also include information to calcula
 - as a user I want the additional beer and brewery information to be displayed in a organized fashion to easily see that information.
 - as a user I want to know my BAC based on customized inputs I give the site.
 - as a user I want to know who created this site and why.
-- as a developer I want to use webSQL to persist my site's state. 
-
+- as a developer I want to use webSQL to persist my site's state.
 
 ## Domain Model
+
 ![Domain Modeling](wireframes/domainModel.jpg "domainModel")
 
 ## Wireframes
@@ -36,5 +37,3 @@ about different types of beers. The app will also include information to calcula
 ![BACPage](/wireframes/BACPage.jpg "BACPage")
 
 ![aboutPage](/wireframes/aboutPage.jpg "aboutPage")
-
-## Links

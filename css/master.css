@@ -1,12 +1,12 @@
 /**
  * FONTS
  */
-/*@import url('');*/
 @import url('https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css');
 
 /**
  * BASE
  */
+@import url('/vendor/jquery-ui/jquery-ui.min.css');
 @import url('/vendor/foundation/foundation.min.css');
 @import url('_base.css');
 
@@ -21,12 +21,3 @@
  * MODULE
  */
 @import url('_module.css');
-
-/**
- * STATE
- */
-@import url('_state.css');
- /**
-  * THEME
-  */
-@import url('_theme.css');

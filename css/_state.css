@@ -1,3 +1,7 @@
 .orbit-container{
   outline-style:none;
 }
+
+.boxwidth{
+  min-width:100px;
+}

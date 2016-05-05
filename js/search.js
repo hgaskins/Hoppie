@@ -7,8 +7,16 @@
     return template(brewery);
   };
 
+  // $('.js-input-search').autocomplete({
+  //   source: function(request, response) {
+  //     $.getJSON('search.php', {
+  //       term: extractLast(request.term)
+  //     }, response);
+  //   }
+  // });
+
   search.getBreweries = function(searchLocation, next) {
-    var searchLocation = searchLocation.toLowerCase().replace('-', ' ');
+    searchLocation = searchLocation.toLowerCase().replace('-', ' ');
 
     $.ajax({
       url: '/api/yelp/',
@@ -39,6 +47,8 @@
       console.log('🍞');
     });
   };
+
+  search.getTerms('portland');
 
   search.addTerm = function(term) {
     $.ajax({

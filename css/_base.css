@@ -2,7 +2,7 @@ body {
   background-color: #fc3;
 }
 
-p, address{
+p, address {
   font-family:"proxima-nova",sans-serif;
 }
 
@@ -13,7 +13,6 @@ main + section {
 audio {
   width: 100%;
   margin: 0 auto;
-  padding: 50px;
 }
 
 a {

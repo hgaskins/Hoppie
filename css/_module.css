@@ -23,9 +23,11 @@
  * Foundation's media object
  */
 .media-object {
-  border-top: 1px solid #fff;
+  border-top: 1px solid #ddd;
   padding: 20px 0;
   margin-bottom: 0;
+  background-color: #fff;
+  padding: 40px;
 }
 
 .media-object:first-child {

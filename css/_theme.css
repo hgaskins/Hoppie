@@ -85,11 +85,15 @@ audio {
  .orbit-next{
    font-size:50px;
    color:black;
+   padding-right:0px;
+   padding-left:0px;
  }
 
  .orbit-previous {
    font-size:50px;
    color:black;
+   padding-right:0px;
+   padding-left:0px;
  }
 
  .slider-handle {
@@ -125,7 +129,6 @@ audio {
   width: 100px;
   height: 100px;
   border: none;
-  color: white;
   font-family: "fatfrank",sans-serif;
   font-size: 1rem;
   background: black;

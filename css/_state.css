@@ -1,7 +1,12 @@
 .orbit-container{
   outline-style:none;
+  min-height:300px;
 }
 
 .boxwidth{
   min-width:100px;
+}
+
+.padding-bottom{
+  padding-bottom:150px;
 }

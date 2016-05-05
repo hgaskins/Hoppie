@@ -9,6 +9,16 @@
   bottom: 0;
 }
 
+.off-canvas-content {
+  background: #fc3;
+  height: 100%;
+  box-shadow: none;
+}
+
+.off-canvas {
+  background: #41443E;
+}
+
 /*
  * Foundation's media object
  */
@@ -69,3 +79,84 @@
     font-size: 2rem;
   }
 }
+
+/*-----------Foundations Orbit Overide------------*/
+
+.orbit-next:active, .orbit-next:focus, .orbit-next:hover, .orbit-previous:active, .orbit-previous:focus, .orbit-previous:hover  {
+  background-color:#fc3;
+}
+
+.orbit-next{
+  font-size:50px;
+  color:black;
+  padding-right:0px;
+  padding-left:0px;
+}
+
+.orbit-previous {
+  font-size:50px;
+  color:black;
+  padding-right:0px;
+  padding-left:0px;
+}
+
+.slider-handle {
+  background-color:black;
+}
+
+.slider-handle:hover{
+ background-color: black;
+}
+
+
+#bacSubmit {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: none;
+  font-family: "fatfrank",sans-serif;
+  font-size: 1rem;
+  background: black;
+  box-shadow: 0 8px 0 rgba(38, 38, 38,0.7),
+    0 15px 20px rgba(0,0,0,.35);
+  text-transform: uppercase;
+  transition: .4s all ease-in;
+  outline: none;
+  text-align: center;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#bacSubmit span {
+   position: relative;
+   color:#F6C534;
+ }
+
+.pressed {
+  padding-top: 3px;
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 rgb(38, 38, 38),
+    0 8px 6px rgba(0,0,0,.45)!important;
+}
+
+.orbit-container{
+  outline-style:none;
+  min-height:300px;
+}
+
+.boxwidth{
+  min-width:100px;
+}
+
+.padding-bottom{
+  padding-bottom:150px;
+}
+
+.button {
+   background-color: #41443E;
+   font-family: "fatfrank",sans-serif;
+ }
+
+ .fontoverride {
+   font-family:"proxima-nova",sans-serif;
+ }

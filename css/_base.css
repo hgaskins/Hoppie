@@ -1,15 +1,26 @@
-/*body {
-  color: #fff;
+body {
+  background-color: #fc3;
 }
 
-header {
-  margin-top: 50px;
+p, address{
+  font-family:"proxima-nova",sans-serif;
 }
-
-main {
-  margin-bottom: 50px;
-}*/
 
 main + section {
   display: none;
+}
+
+audio {
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+a {
+  color: #FEFEFE;
+  font-family: "fatfrank",sans-serif;
+}
+
+i {
+  font-size: 30px;
 }

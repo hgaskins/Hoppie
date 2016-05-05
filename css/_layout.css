@@ -8,9 +8,46 @@
   margin-top: 40px;
 }
 
-
-
-
 .js-off-canvas-exit {
   background: hsla(0,0%,100%,0);
+}
+
+section .searchResults {
+  background-color: white;
+}
+
+section .aboutContent {
+  background-color: white;
+  padding: 10px;
+}
+
+.aboutUs a {
+  color: black;
+}
+.aboutUs a:hover {
+  color: #2199e8;
+  transition: .6s ease;
+}
+
+.dawgs {
+  margin: 10px auto;
+}
+
+@media screen and (max-width: 63.9375em) {
+  .aboutUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .dawgs {
+    max-width: 100%;
+    padding: 20px 150px 20px 150px;
+  }
+}
+
+@media screen and (max-width: 39.9375em) {
+  .dawgs {
+    max-width: 100%;
+    padding: 10px;
+  }
 }

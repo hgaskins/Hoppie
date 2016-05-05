@@ -34,6 +34,17 @@ p, address{
   font-family:"proxima-nova",sans-serif;
 }
 
+section .searchResults {
+  background-color: white;
+  padding: 10px;
+}
+
+section .aboutContent {
+  background-color: white;
+  padding: 10px;
+}
+
+
 
 audio {
   width: 100%;
@@ -45,21 +56,12 @@ audio {
   font-family:"proxima-nova",sans-serif;
 }
 
-.aboutDescription {
-  padding: 10px;
-  margin: 20px;
-}
-
 .aboutUs a {
   color: black;
 }
 .aboutUs a:hover {
   color: #2199e8;
-}
-
-.aboutUs {
-  padding: 10px;
-  display: flex;
+  transition: .6s ease;
 }
 
 .dawgs {

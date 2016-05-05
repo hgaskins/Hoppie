@@ -33,11 +33,31 @@ section .aboutContent {
 }
 .aboutUs a:hover {
   color: #2199e8;
-  transition: .6s ease;
+  transition: .4s ease;
 }
 
 .dawgs {
   margin: 10px auto;
+}
+
+.menu>li>a:hover {
+  background-color: #1585cf;
+  color: white;
+  transition: .6s ease;
+}
+
+.menu>li>a:focus {
+  color: white;
+  background-color: none;
+  outline: none;
+}
+
+.aboutDescription a {
+  color: black;
+}
+.aboutDescription a:hover {
+  color: #2199e8;
+  transition: .4s ease;
 }
 
 @media screen and (max-width: 63.9375em) {

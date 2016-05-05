@@ -43,7 +43,7 @@
   search.addTerm = function(term) {
     $.ajax({
       url: '/api/search',
-      method: 'POST',
+      method: 'PUT',
       data: { term: term },
       dataType: 'json'
     }).done(function(data, message, xhr) {
@@ -65,7 +65,7 @@
   search.updateTerm = function(term, id) {
     $.ajax({
       url: '/api/search',
-      method: 'PUT',
+      method: 'POST',
       data: { id: id, term: term },
       dataType: 'json'
     }).done(function(data, message, xhr) {

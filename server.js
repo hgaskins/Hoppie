@@ -88,7 +88,7 @@ app.post('/api/search', function (req, res) {
       return console.error('error fetching client from pool', err);
     }
 
-    client.query('INSERT INTO track_search (term, timestamp_added) VALUES ($1, CURRENT_TIMESTAMP)', [req.body.term], function(err, result) {
+    client.query('UPDATE track_search SET term=$1 WHERE id=$2', [req.body.term, req.body.id], function(err, result) {
       done();
 
       if (err) {
@@ -107,7 +107,7 @@ app.put('/api/search', function (req, res) {
       return console.error('error fetching client from pool', err);
     }
 
-    client.query('UPDATE track_search SET term=$1 WHERE id=$2', [req.body.term, req.body.id], function(err, result) {
+    client.query('INSERT INTO track_search (term, timestamp_added) VALUES ($1, CURRENT_TIMESTAMP)', [req.body.term], function(err, result) {
       done();
 
       if (err) {

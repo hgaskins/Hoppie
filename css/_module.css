@@ -55,6 +55,14 @@
   max-width: 100%;
 }
 
+.googleMapLink {
+  display: block;
+}
+
+.media-object-section a {
+  color: black;
+}
+
 @media screen and (max-width: 39.9375em) {
   .media-object.stack-for-small .media-object-section {
     padding-bottom: 0;

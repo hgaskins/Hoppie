@@ -88,7 +88,7 @@
                   <h2 class="text-center">Just for Fun - Mouth Prepare to Water</h2>
                   <audio controls>
                     <source src="http://sheav.se/sounds/beer-sound-begin.mp3">
-                  Your browser does not support the audio element.
+                    Your browser does not support the audio element.
                   </audio>
                 </div>
               </div>
@@ -108,76 +108,67 @@
                         <span class="slider-fill" data-slider-fill></span>
                       </div>
                    </div>
-                  <div class="row small-6 small-offset-3 text-center columns">
-                    <h4 class="fontoverride"> Number of Beers Consumed </h4>
-                  </div>
-                </li>
-                <li class="orbit-slide">
-                  <div class=" row small-2 columns boxwidth">
-                    <input class="text-center" type="number" id="percentageOutput">
-                  </div>
-                  <div class="small-4 columns small-offset-4">
-                    <div class="slider" data-slider data-initial-start="0" data-end="100">
-                      <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="percentageOutput"></span>
-                      <span class="slider-fill" data-slider-fill></span>
+                   <div class="row small-6 small-offset-3 text-center columns">
+                      <h4 class="fontoverride"> Number of Beers Consumed </h4>
                     </div>
-                  </div>
-                  <div class="row small-6 small-offset-3 text-center columns">
-                    <h4 class="fontoverride"> Average Alcohol Content Percentage </h4>
-                  </div>
-                </li>
-
-                <li class="orbit-slide">
-                  <div class=" row small-2 columns boxwidth">
-                    <input class="text-center" type="number" id="weightOutput">
-                  </div>
-                  <div class="row small-4 columns small-offset-4">
-                    <div class="slider" data-slider data-initial-start="1" data-end="1000">
-                      <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="weightOutput"></span>
-                      <span class="slider-fill" data-slider-fill></span>
+                  </li>
+                  <li class="orbit-slide">
+                    <div class=" row small-2 columns boxwidth">
+                      <input class="text-center" type="number" id="percentageOutput">
                     </div>
-                  </div>
-                  <div class="row small-6 small-offset-3 text-center columns">
-                    <h4 class="fontoverride"> Your Weight </h4>
-                  </div>
-                </li>
-
-                <li class="orbit-slide">
-                  <div class="row small-2 columns boxwidth">
-                    <input class="text-center" type="number" id="hoursOutput">
-                  </div>
-                  <div class="row small-4 columns small-offset-4">
-                    <div class="slider" data-slider data-initial-start="0" data-end="24">
-                      <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="hoursOutput"></span>
-                      <span class="slider-fill" data-slider-fill></span>
+                    <div class="small-4 columns small-offset-4">
+                      <div class="slider" data-slider data-initial-start="0" data-end="100">
+                        <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="percentageOutput"></span>
+                        <span class="slider-fill" data-slider-fill></span>
+                      </div>
                     </div>
-                  </div>
-                  <div class="row small-6 small-offset-3 text-center columns">
-                    <h4 class="fontoverride"> Hours Consumed </h4>
-                  </div>
-                </li>
-
-                <li class="orbit-slide">
-                  <div class=" row small-3 columns text-center">
-                    <h3 id="bacVal"></h3>
-                  </div>
-
-                  <div class="row small-6 small-offset-3 text-center columns">
-                    <button id="bacSubmit"><span>Calculate</span></button>
-
-                  </div>
-                </li>
-
+                    <div class="row small-6 small-offset-3 text-center columns">
+                      <h4 class="fontoverride"> Average Alcohol Content Percentage </h4>
+                    </div>
+                  </li>
+                  <li class="orbit-slide">
+                    <div class=" row small-2 columns boxwidth">
+                      <input class="text-center" type="number" id="weightOutput">
+                    </div>
+                    <div class="row small-4 columns small-offset-4">
+                      <div class="slider" data-slider data-initial-start="1" data-end="1000">
+                        <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="weightOutput"></span>
+                        <span class="slider-fill" data-slider-fill></span>
+                      </div>
+                    </div>
+                    <div class="row small-6 small-offset-3 text-center columns">
+                      <h4 class="fontoverride"> Your Weight </h4>
+                    </div>
+                  </li>
+                  <li class="orbit-slide">
+                    <div class="row small-2 columns boxwidth">
+                      <input class="text-center" type="number" id="hoursOutput">
+                    </div>
+                    <div class="row small-4 columns small-offset-4">
+                      <div class="slider" data-slider data-initial-start="0" data-end="24">
+                        <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="hoursOutput"></span>
+                        <span class="slider-fill" data-slider-fill></span>
+                      </div>
+                    </div>
+                    <div class="row small-6 small-offset-3 text-center columns">
+                      <h4 class="fontoverride"> Hours Consumed </h4>
+                    </div>
+                  </li>
+                  <li class="orbit-slide">
+                    <div class=" row small-3 columns text-center">
+                      <h3 id="bacVal"></h3>
+                    </div>
+                    <div class="row small-6 small-offset-3 text-center columns">
+                      <button id="bacSubmit"><span>Calculate</span></button>
+                    </div>
+                  </li>
                 </ul>
-
               </div>
-
             </section>
           </main>
         </div>
       </div>
     </div>
-
     <!-- Handlebars -->
     <script id="breweriesTemplate" type="text/x-handlebars-template">
       {{#unless is_closed}}
@@ -190,18 +181,23 @@
             <img class="rating-img" src="{{rating_img_url_large}}" alt width="111" height="20">
             {{#if snippet_text}}
               <p>{{snippet_text}}</p>
+            {{else}}
+              <p>If you like to drink beer, check out this spot. If you do check it out, why not leave a review on Yelp, help a business out. No current snippets at this time :)</p>
             {{/if}}
             {{#if display_phone}}
               <p>{{display_phone}}</p>
             {{/if}}
             <address>
-              {{location.address}}<br>
+              <a href="http://www.google.com/maps/?saddr={{location.coordinate.latitude}},{{location.coordinate.longitude}}" target="_blank">
+              {{location.address}}
+              <br>
               {{location.city}}, {{location.state_code}} {{location.postal_code}}
+              </a>
             </address>
             <p><a href="{{url}}" target="_blank">See more on Yelp</a></p>
           </div>
           <div class="media-object-section">
-            <img class="googleMap" src="https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=300x300&maptype=roadmap&markers=color:red%7Clabel:B%7C{{location.coordinate.latitude}},{{location.coordinate.longitude}}">
+            <a class="googleMapLink" href="http://www.google.com/maps/?saddr={{location.coordinate.latitude}},{{location.coordinate.longitude}}" target="_blank"><img class="googleMap" src="https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=300x300&maptype=roadmap&markers=color:red%7Clabel:B%7C{{location.coordinate.latitude}},{{location.coordinate.longitude}}"></a>
           </div>
         </article>
       {{/unless}}

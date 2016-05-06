@@ -175,6 +175,23 @@
               </div>
             </section>
             <section class="databasePage row">
+              <div class="medium-10 medium-offset-1 large-12 large-offset-0 columns">
+                <div class="databaseContent">
+                  <h2 class="text-center">track_search</h2>
+                  <table class="stack">
+                    <thead>
+                      <tr>
+                        <th>id</th>
+                        <th>term</th>
+                        <th>timestamp_added</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </section>
           </main>
         </div>
@@ -212,6 +229,24 @@
           </div>
         </article>
       {{/unless}}
+    </script>
+    <script id="databaseTableRowTemplate" type="text/x-handlebars-template">
+      <tr>
+        <td><span class="hide-for-large"><b>id</b><br></span>{{id}}</td>
+        <td>
+          <span class="hide-for-large"><b>term</b><br></span>
+          <div class="input-group">
+            <input type="text" value="{{term}}" class="input-group-field" autocomplete="off">
+            <div class="input-group-button">
+              <button type="button" class="secondary button js-update-record" data-id="{{id}}">Update</button>
+            </div>
+          </div>
+        </td>
+        <td><span class="hide-for-large"><b>timestamp_added</b><br></span>{{timestamp_added}}</td>
+        <td>
+          <button type="button" class="alert button js-delete-record" data-id="{{id}}">Delete</button>
+        </td>
+      </tr>
     </script>
     <script src="/vendor/jquery/jquery.js"></script>
     <script src="/vendor/jquery-ui/jquery-ui.min.js"></script>

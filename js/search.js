@@ -32,7 +32,7 @@
     $.ajax({
       url: '/api/search',
       method: 'GET',
-      data: { term: request.term },
+      data: { term: request.term, limit: 3 },
       dataType: 'json'
     }).done(function(data, message, xhr) {
       response(data.map(function (currentValue) {
@@ -52,26 +52,22 @@
     });
   };
 
-  search.deleteTerm = function(id) {
+  search.deleteTerm = function(id, callback) {
     $.ajax({
       url: '/api/search',
       method: 'DELETE',
       data: { id: id },
       dataType: 'json'
-    }).done(function(data, message, xhr) {
-      console.log(data);
-    });
+    }).done(callback);
   };
 
-  search.updateTerm = function(term, id) {
+  search.updateTerm = function(id, term, callback) {
     $.ajax({
       url: '/api/search',
       method: 'POST',
       data: { id: id, term: term },
       dataType: 'json'
-    }).done(function(data, message, xhr) {
-      console.log(data);
-    });
+    }).done(callback);
   };
 
   $('.js-input-search').autocomplete({

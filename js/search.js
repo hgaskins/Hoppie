@@ -7,14 +7,6 @@
     return template(brewery);
   };
 
-  // $('.js-input-search').autocomplete({
-  //   source: function(request, response) {
-  //     $.getJSON('search.php', {
-  //       term: extractLast(request.term)
-  //     }, response);
-  //   }
-  // });
-
   search.getBreweries = function(searchLocation, next) {
     searchLocation = searchLocation.toLowerCase().replace('-', ' ');
 
@@ -36,19 +28,18 @@
     }
   };
 
-  search.getTerms = function(term) {
+  search.getTerms = function(request, response) {
     $.ajax({
       url: '/api/search',
       method: 'GET',
-      data: { term: term },
+      data: { term: request.term },
       dataType: 'json'
     }).done(function(data, message, xhr) {
-      console.log(data);
-      console.log('🍞');
+      response(data.map(function (currentValue) {
+        return currentValue.term;
+      }));
     });
   };
-
-  search.getTerms('portland');
 
   search.addTerm = function(term) {
     $.ajax({
@@ -83,16 +74,26 @@
     });
   };
 
-  var breweriesController = {};
+  $('.js-input-search').autocomplete({
+    source: search.getTerms
+  }).keypress(function(event) {
+    if (event.keyCode == 13) {
+      var $this = $(this);
+      $this.siblings().find('button').click();
+      $this.autocomplete('close');
+    }
+  }).autocomplete('widget').addClass('menu submenu is-dropdown-submenu vertical');
 
-  breweriesController.index = function(ctx, next) {
+  var searchController = {};
+
+  searchController.index = function(ctx, next) {
     var $homePage = $('.homePage');
     $homePage.find('.searchResults').empty();
     $homePage.show().siblings().hide();
+
     if (ctx.params.location) {
       $('.js-input-search').val(ctx.params.location.replace('-', ' '));
     }
-    $('#offCavnas').foundation('close');
 
     $('.js-button-search').off('click').on('click', function () {
       var $input = $(this).parent('.input-group-button').siblings('.input-group-field');
@@ -105,12 +106,12 @@
         page.redirect('/');
       }
     });
+
     if (ctx.params.location) {
       search.getBreweries(ctx.params.location, search.gotBreweries);
     }
-
   };
 
-  module.breweriesController = breweriesController;
   module.search = search;
+  module.searchController = searchController;
 })(window);

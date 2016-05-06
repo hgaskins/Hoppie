@@ -1,4 +1,15 @@
 /*
+ * jQuery UI's autocomplete
+ */
+.ui-menu .ui-state-focus,
+.ui-menu .ui-state-active {
+  margin: 0;
+  color: #fff;
+  background-color: #2199e8;
+  transition: .6s ease;
+}
+
+/*
  * Foundation's off-canvas
  */
 .off-canvas-wrapper-inner {

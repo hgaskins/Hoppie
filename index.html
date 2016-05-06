@@ -4,11 +4,10 @@
     <meta charset="utf-8">
     <title>Hoppie</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="icon" href="/img/hoppieFavicon180.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Hoppie">
-    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
     <link rel="apple-touch-icon-precomposed" href="/img/hoppieFavicon180.png">
     <link rel="stylesheet" href="/css/master.css">
     <script src="https://use.typekit.net/elh4gma.js"></script>
@@ -19,9 +18,9 @@
       <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
         <div class="off-canvas position-right" data-position="right" id="offCavnas" data-off-canvas>
           <ul class="vertical menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/bac">BAC Calculator</a></li>
+            <li><a href="/" data-close>Home</a></li>
+            <li><a href="/about" data-close>About</a></li>
+            <li><a href="/bac" data-close>BAC Calculator</a></li>
           </ul>
         </div>
         <div class="off-canvas-content" data-off-canvas-content>
@@ -39,7 +38,7 @@
             <div class="row">
               <div class="columns medium-8 medium-offset-2">
                 <div class="input-group">
-                  <input type="text" value class="input-group-field js-input-search" placeholder="Enter neighborhood, address or city 🍻" autocomplete="off">
+                  <input type="text" value class="input-group-field js-input-search" placeholder="🍻 Enter neighborhood, address or city" autocomplete="off">
                   <div class="input-group-button">
                     <button type="button" class="button js-button-search">Search</button>
                   </div>
@@ -172,6 +171,8 @@
                 </div>
               </div>
             </section>
+            <section class="databasePage row">
+            </section>
           </main>
         </div>
       </div>
@@ -218,6 +219,8 @@
     <script src="/js/search.js"></script>
     <script src="/js/about.js"></script>
     <script src="/js/bac.js"></script>
+    <script src="/js/database.js"></script>
     <script src="/js/routes.js"></script>
+    <script src="/js/app.js"></script>
   </body>
 </html>

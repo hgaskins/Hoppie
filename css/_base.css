@@ -6,7 +6,7 @@ p, address {
   font-family:"proxima-nova",sans-serif;
 }
 
-main + section {
+main > section {
   display: none;
 }
 

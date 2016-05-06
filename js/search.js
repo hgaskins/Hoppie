@@ -1,11 +1,17 @@
 (function(module) {
 
+  /*-----------------------------------------------------*\
+   * HANDLEBARS
+  \*-----------------------------------------------------*/
   var renderBreweriesTemplate = function(brewery) {
     var template = Handlebars.compile($('#breweriesTemplate').text());
 
     return template(brewery);
   };
 
+  /*-----------------------------------------------------*\
+   * SEARCH MODEL
+  \*-----------------------------------------------------*/
   var search = {};
 
   search.getBreweries = function(searchLocation, next) {
@@ -71,6 +77,9 @@
     }).done(callback);
   };
 
+  /*-----------------------------------------------------*\
+   * SEARCH VIEW
+  \*-----------------------------------------------------*/
   var searchView = {};
 
   searchView.handleSearchInput = function () {
@@ -102,6 +111,9 @@
     });
   };
 
+  /*-----------------------------------------------------*\
+   * SEARCH CONTROLLER
+  \*-----------------------------------------------------*/
   var searchController = {};
 
   searchController.index = function(ctx, next) {
@@ -116,7 +128,11 @@
     }
   };
 
+  /*-----------------------------------------------------*\
+   * ADD TO WINDOW OBJECT
+  \*-----------------------------------------------------*/
   module.search = search;
   module.searchView = searchView;
   module.searchController = searchController;
+
 })(window);

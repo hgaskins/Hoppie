@@ -48,9 +48,9 @@ about different types of beers. The app will also include information to calcula
 
 ## Hoppie for dummies
 
-![Mobile Hoppie](userguide/userGuideMobile.png "mobilehoppie")
+![User Guide](userguide/hoppieuserguide.gif "userguide")
 
-![Mobile Menu](userguide/userGuideMobileAddress.png "mobilemenu")
+
 
 ## Domain Model
 

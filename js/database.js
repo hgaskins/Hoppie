@@ -1,10 +1,17 @@
 (function(module) {
+
+  /*-----------------------------------------------------*\
+   * HANDLEBARS
+  \*-----------------------------------------------------*/
   var renderDatabaseTableRowTemplate = function(databaseTableRow) {
     var template = Handlebars.compile($('#databaseTableRowTemplate').text());
 
     return template(databaseTableRow);
   };
 
+  /*-----------------------------------------------------*\
+   * DATABASE MODEL
+  \*-----------------------------------------------------*/
   var database = {};
 
   database.getTerms = function() {
@@ -46,6 +53,9 @@
     });
   };
 
+  /*-----------------------------------------------------*\
+   * DATABASE CONTROLLER
+  \*-----------------------------------------------------*/
   var databaseController = {};
 
   databaseController.index = function() {
@@ -53,6 +63,10 @@
     database.getTerms();
   };
 
+  /*-----------------------------------------------------*\
+   * ADD TO WINDOW OBJECT
+  \*-----------------------------------------------------*/
   module.database = database;
   module.databaseController = databaseController;
+
 }(window));

@@ -101,8 +101,27 @@
   }
 }
 
-/*-----------Foundations Orbit Overide------------*/
+/*
+ * Foundation's reveal
+ */
+.reveal {
+  background-color:#fc3;
+}
 
+@media screen and (max-width: 39.9375em) {
+  .reveal.large{
+  width:90%;
+  max-width:90%;
+  height: auto;
+  min-height:auto;
+  margin: 0 auto;
+
+  }
+}
+
+/*
+ * Foundation's orbit
+ */
 .orbit {
   padding-top:40px;
 }
@@ -133,7 +152,6 @@
  background-color: black;
 }
 
-
 #bacSubmit {
   border-radius: 50%;
   width: 100px;
@@ -142,8 +160,7 @@
   font-family: "fatfrank",sans-serif;
   font-size: 1rem;
   background: black;
-  box-shadow: 0 8px 0 rgba(38, 38, 38,0.7),
-    0 15px 20px rgba(0,0,0,.35);
+  box-shadow: 0 8px 0 rgba(38, 38, 38,0.7), 0 15px 20px rgba(0,0,0,.35);
   text-transform: uppercase;
   transition: .4s all ease-in;
   outline: none;
@@ -153,15 +170,14 @@
 }
 
 #bacSubmit span {
-   position: relative;
-   color:#F6C534;
- }
+  position: relative;
+  color:#F6C534;
+}
 
 .pressed {
   padding-top: 3px;
   transform: translateY(4px);
-  box-shadow: 0 4px 0 rgb(38, 38, 38),
-    0 8px 6px rgba(0,0,0,.45)!important;
+  box-shadow: 0 4px 0 rgb(38, 38, 38), 0 8px 6px rgba(0,0,0,.45)!important;
 }
 
 .orbit-container{
@@ -178,68 +194,43 @@
 }
 
 .button {
-   background-color: #41443E;
-   font-family: "fatfrank",sans-serif;
- }
+  background-color: #41443E;
+  font-family: "fatfrank",sans-serif;
+}
 
- .fontoverride {
-   font-family:"proxima-nova",sans-serif;
- }
+.fontoverride {
+  font-family:"proxima-nova",sans-serif;
+}
 
- .slider-handle{
-   font-size:40px;
-   background-color:transparent;
-   margin-top:-2.2rem;
-   width:2.4rem;
-   height:3.4rem;
-   -webkit-transform: scale(1);
-   transform: scale(1);
- }
+.slider-handle{
+  font-size:40px;
+  background-color:transparent;
+  margin-top:-2.2rem;
+  width:2.4rem;
+  height:3.4rem;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
 
- .slider-handle:hover{
-   background-color:transparent;
- }
+.slider-handle:hover{
+  background-color:transparent;
+}
 
- .slider-fill {
-   background-color:#E0893A;
- }
+.slider-fill {
+  background-color:#E0893A;
+}
 
- .hiddentext{
-   height:50px;
- }
+.hiddentext{
+  height:50px;
+}
 
- .inputsize {
-   font-size:1.5em;
-   background-color:transparent;
-   border:none;
- }
-
- [type=number]:focus{
-   background-color:transparent;
-   border:none;
-   box-shadow:none;
- }
-
-[type=number]{
-  box-shadow:none;
+.inputsize {
+  font-size:1.5em;
+  background-color:transparent;
+  border:none;
 }
 
 #bacImg{
   width:100%;
   height:auto;
-}
-
-.reveal {
-  background-color:#fc3;
-}
-
-@media screen and (max-width: 39.9375em) {
-  .reveal.large{
-  width:90%;
-  max-width:90%;
-  height: auto;
-  min-height:auto;
-  margin: 0 auto;
-
-  }
 }

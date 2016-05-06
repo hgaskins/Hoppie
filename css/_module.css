@@ -189,7 +189,9 @@
  .slider-handle{
    font-size:40px;
    background-color:transparent;
-   top:-14px
+   margin-top:-.3rem;
+   width:2.4rem;
+   height:3.4rem;
  }
 
  .slider-handle:hover{

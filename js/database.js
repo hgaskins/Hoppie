@@ -1,11 +1,11 @@
 (function(module) {
-  var database = {};
-
-  var render = function(databaseTableRow) {
+  var renderDatabaseTableRowTemplate = function(databaseTableRow) {
     var template = Handlebars.compile($('#databaseTableRowTemplate').text());
 
     return template(databaseTableRow);
   };
+
+  var database = {};
 
   database.getTerms = function() {
     $.ajax({
@@ -15,9 +15,12 @@
     }).done(function(data, message, xhr) {
       if (data.length) {
         var $databaseContent = $('.databaseContent');
+        var $databaseContentTbody = $databaseContent.find('tbody');
+
+        $databaseContentTbody.html('');
 
         data.forEach(function(thisSearch) {
-          $databaseContent.find('tbody').append(render(thisSearch));
+          $databaseContentTbody.append(renderDatabaseTableRowTemplate(thisSearch));
         });
 
         $databaseContent.find('.js-update-record').on('click', function () {

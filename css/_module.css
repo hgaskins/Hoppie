@@ -219,3 +219,23 @@
 [type=number]{
   box-shadow:none;
 }
+
+#bacImg{
+  width:100%;
+  height:auto;
+}
+
+.reveal {
+  background-color:#fc3;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .reveal.large{
+  width:90%;
+  max-width:90%;
+  height: auto;
+  min-height:auto;
+  margin: 0 auto;
+
+  }
+}

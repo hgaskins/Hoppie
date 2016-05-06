@@ -24,6 +24,9 @@ section .databaseContent {
   background-color: white;
   padding: 40px;
 }
+section .bacContent {
+  margin: 30px 0 0 0;
+}
 
 .aboutDescription,
 .aboutTeam {

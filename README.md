@@ -48,7 +48,7 @@ about different types of beers. The app will also include information to calcula
 
 ## Hoppie for dummies
 
-![User Guide](userguide/hoppieuserguide.gif "userguide")
+![User Guide](userguide/hoppieguide.gif "userguide")
 
 
 

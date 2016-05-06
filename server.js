@@ -69,7 +69,22 @@ app.get('/api/search', function (req, res) {
       return console.error('error fetching client from pool', err);
     }
 
-    client.query('SELECT id, term FROM track_search WHERE term ILIKE $1 ORDER BY timestamp_added DESC LIMIT 3', ['%'+req.query.term+'%'], function(err, result) {
+    var sqlQuery = 'SELECT id, term, timestamp_added FROM track_search';
+    var sqlBindings = [];
+
+    if (req.query.term) {
+      sqlQuery += ' WHERE term ILIKE $1';
+      sqlBindings.push('%'+req.query.term+'%');
+    }
+
+    sqlQuery += ' ORDER BY timestamp_added';
+
+    if (req.query.limit) {
+      sqlQuery += ' DESC LIMIT $2';
+      sqlBindings.push(req.query.limit);
+    }
+
+    client.query(sqlQuery, sqlBindings, function(err, result) {
       done();
 
       if (err) {

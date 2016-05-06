@@ -1,4 +1,15 @@
 /*
+ * jQuery UI's autocomplete
+ */
+.ui-menu .ui-state-focus,
+.ui-menu .ui-state-active {
+  margin: 0;
+  color: #fff;
+  background-color: #2199e8;
+  transition: .6s ease;
+}
+
+/*
  * Foundation's off-canvas
  */
 .off-canvas-wrapper-inner {
@@ -92,6 +103,10 @@
 
 /*-----------Foundations Orbit Overide------------*/
 
+.orbit {
+  padding-top:40px;
+}
+
 .orbit-next:active, .orbit-next:focus, .orbit-next:hover, .orbit-previous:active, .orbit-previous:focus, .orbit-previous:hover  {
   background-color:#fc3;
 }
@@ -170,3 +185,57 @@
  .fontoverride {
    font-family:"proxima-nova",sans-serif;
  }
+
+ .slider-handle{
+   font-size:40px;
+   background-color:transparent;
+   top:-14px
+ }
+
+ .slider-handle:hover{
+   background-color:transparent;
+ }
+
+ .slider-fill {
+   background-color:#E0893A;
+ }
+
+ .hiddentext{
+   height:50px;
+ }
+
+ .inputsize {
+   font-size:1.5em;
+   background-color:transparent;
+   border:none;
+ }
+
+ [type=number]:focus{
+   background-color:transparent;
+   border:none;
+   box-shadow:none;
+ }
+
+[type=number]{
+  box-shadow:none;
+}
+
+#bacImg{
+  width:100%;
+  height:auto;
+}
+
+.reveal {
+  background-color:#fc3;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .reveal.large{
+  width:90%;
+  max-width:90%;
+  height: auto;
+  min-height:auto;
+  margin: 0 auto;
+
+  }
+}

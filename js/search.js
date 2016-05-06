@@ -1,19 +1,12 @@
 (function(module) {
-  var search = {};
 
-  var render = function(brewery) {
+  var renderBreweriesTemplate = function(brewery) {
     var template = Handlebars.compile($('#breweriesTemplate').text());
 
     return template(brewery);
   };
 
-  // $('.js-input-search').autocomplete({
-  //   source: function(request, response) {
-  //     $.getJSON('search.php', {
-  //       term: extractLast(request.term)
-  //     }, response);
-  //   }
-  // });
+  var search = {};
 
   search.getBreweries = function(searchLocation, next) {
     searchLocation = searchLocation.toLowerCase().replace('-', ' ');
@@ -31,24 +24,23 @@
       $('.searchResults').html('<p class="text-center">' + data.error.text + '</p>');
     } else {
       data.businesses.forEach(function(thisBusiness) {
-        $('.searchResults').append(render(thisBusiness));
+        $('.searchResults').append(renderBreweriesTemplate(thisBusiness));
       });
     }
   };
 
-  search.getTerms = function(term) {
+  search.getTerms = function(request, response) {
     $.ajax({
       url: '/api/search',
       method: 'GET',
-      data: { term: term },
+      data: { term: request.term, limit: 3 },
       dataType: 'json'
     }).done(function(data, message, xhr) {
-      console.log(data);
-      console.log('🍞');
+      response(data.map(function (currentValue) {
+        return currentValue.term;
+      }));
     });
   };
-
-  search.getTerms('portland');
 
   search.addTerm = function(term) {
     $.ajax({
@@ -57,60 +49,74 @@
       data: { term: term },
       dataType: 'json'
     }).done(function(data, message, xhr) {
-      console.log(data);
+      page.redirect('/breweries/' + term.toLowerCase().replace(' ', '-'));
     });
   };
 
-  search.deleteTerm = function(id) {
+  search.deleteTerm = function(id, callback) {
     $.ajax({
       url: '/api/search',
       method: 'DELETE',
       data: { id: id },
       dataType: 'json'
-    }).done(function(data, message, xhr) {
-      console.log(data);
-    });
+    }).done(callback);
   };
 
-  search.updateTerm = function(term, id) {
+  search.updateTerm = function(id, term, callback) {
     $.ajax({
       url: '/api/search',
       method: 'POST',
       data: { id: id, term: term },
       dataType: 'json'
-    }).done(function(data, message, xhr) {
-      console.log(data);
+    }).done(callback);
+  };
+
+  var searchView = {};
+
+  searchView.handleSearchInput = function () {
+    $('.js-input-search').autocomplete({
+      source: search.getTerms,
+      create: function() {
+        $(this).autocomplete('widget').addClass('menu submenu is-dropdown-submenu vertical');
+      },
+      select: function(event, ui) {
+        $(this).val(ui.item.value).siblings().find('button').click();
+      }
+    }).keypress(function(event) {
+      if (event.keyCode == 13) {
+        var $this = $(this);
+        $this.siblings().find('button').click();
+        $this.autocomplete('close');
+      }
     });
   };
 
-  var breweriesController = {};
-
-  breweriesController.index = function(ctx, next) {
-    var $homePage = $('.homePage');
-    $homePage.find('.searchResults').empty();
-    $homePage.show().siblings().hide();
-    if (ctx.params.location) {
-      $('.js-input-search').val(ctx.params.location.replace('-', ' '));
-    }
-    $('#offCavnas').foundation('close');
-
-    $('.js-button-search').off('click').on('click', function () {
+  searchView.handleSearchButton = function () {
+    $('.js-button-search').on('click', function () {
       var $input = $(this).parent('.input-group-button').siblings('.input-group-field');
       var searchValue = $input.val().trim();
 
       if (searchValue.length) {
-        page.redirect('/breweries/' + searchValue.toLowerCase().replace(' ', '-'));
-      } else {
-        $('.searchResults').html('');
-        page.redirect('/');
+        search.addTerm(searchValue);
       }
     });
-    if (ctx.params.location) {
-      search.getBreweries(ctx.params.location, search.gotBreweries);
-    }
-
   };
 
-  module.breweriesController = breweriesController;
+  var searchController = {};
+
+  searchController.index = function(ctx, next) {
+    var $homePage = $('.homePage');
+    $homePage.find('.searchResults').empty();
+    $homePage.show().siblings().hide();
+
+    if (ctx.params.location) {
+      $('.js-input-search').val(ctx.params.location.replace('-', ' '));
+
+      search.getBreweries(ctx.params.location, search.gotBreweries);
+    }
+  };
+
   module.search = search;
+  module.searchView = searchView;
+  module.searchController = searchController;
 })(window);

@@ -14,13 +14,18 @@
 
 section .homeContent,
 section .aboutContent,
-section .bacContent {
+section .bacContent,
+section .databaseContent {
   margin: 30px 0 60px 0;
 }
 
-section .aboutContent {
+section .aboutContent,
+section .databaseContent {
   background-color: white;
   padding: 40px;
+}
+section .bacContent {
+  margin: 30px 0 0 0;
 }
 
 .aboutDescription,

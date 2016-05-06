@@ -1,22 +1,21 @@
 (function(module) {
   var routes = {};
+
+  routes.notFound = function () {
+    page.redirect('/');
+  };
+
   routes.setMapping = function() {
     page.base('/');
-
-    page('',breweriesController.index);
-    page('breweries', function() {
-      page.redirect('/');
-    });
-    page('breweries/:location', breweriesController.index);
+    page('', searchController.index);
+    page('breweries', routes.notFound);
+    page('breweries/:location', searchController.index);
     page('about', aboutController.index);
     page('bac', bacController.index);
-    page('*', function() {
-      page.redirect('/');
-    });
-
+    page('database', databaseController.index);
+    page('*', routes.notFound);
     page();
   };
-  $(document).foundation();
-  routes.setMapping();
+
   module.routes = routes;
 })(window);

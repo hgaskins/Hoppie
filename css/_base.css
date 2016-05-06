@@ -6,7 +6,7 @@ p, address {
   font-family:"proxima-nova",sans-serif;
 }
 
-main + section {
+main > section {
   display: none;
 }
 
@@ -22,4 +22,29 @@ a {
 
 i {
   font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }

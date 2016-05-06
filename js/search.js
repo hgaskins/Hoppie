@@ -48,7 +48,7 @@
       data: { term: term },
       dataType: 'json'
     }).done(function(data, message, xhr) {
-      console.log(data);
+      page.redirect('/breweries/' + term.toLowerCase().replace(' ', '-'));
     });
   };
 
@@ -75,14 +75,29 @@
   };
 
   $('.js-input-search').autocomplete({
-    source: search.getTerms
+    source: search.getTerms,
+    create: function() {
+      $(this).autocomplete('widget').addClass('menu submenu is-dropdown-submenu vertical');
+    },
+    select: function(event, ui) {
+      $(this).val(ui.item.value).siblings().find('button').click();
+    }
   }).keypress(function(event) {
     if (event.keyCode == 13) {
       var $this = $(this);
       $this.siblings().find('button').click();
       $this.autocomplete('close');
     }
-  }).autocomplete('widget').addClass('menu submenu is-dropdown-submenu vertical');
+  });
+
+  $('.js-button-search').on('click', function () {
+    var $input = $(this).parent('.input-group-button').siblings('.input-group-field');
+    var searchValue = $input.val().trim();
+
+    if (searchValue.length) {
+      search.addTerm(searchValue);
+    }
+  });
 
   var searchController = {};
 
@@ -93,21 +108,7 @@
 
     if (ctx.params.location) {
       $('.js-input-search').val(ctx.params.location.replace('-', ' '));
-    }
 
-    $('.js-button-search').off('click').on('click', function () {
-      var $input = $(this).parent('.input-group-button').siblings('.input-group-field');
-      var searchValue = $input.val().trim();
-
-      if (searchValue.length) {
-        page.redirect('/breweries/' + searchValue.toLowerCase().replace(' ', '-'));
-      } else {
-        $('.searchResults').html('');
-        page.redirect('/');
-      }
-    });
-
-    if (ctx.params.location) {
       search.getBreweries(ctx.params.location, search.gotBreweries);
     }
   };

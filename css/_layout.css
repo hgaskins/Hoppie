@@ -36,6 +36,7 @@ section .bacContent {
 .aboutUs a {
   color: black;
 }
+
 .aboutUs a:hover {
   color: #2199e8;
   transition: .4s ease;
@@ -45,13 +46,13 @@ section .bacContent {
   margin: 10px auto;
 }
 
-.menu>li>a:hover {
+.menu > li > a:hover {
   background-color: #1585cf;
   color: white;
   transition: .6s ease;
 }
 
-.menu>li>a:focus {
+.menu > li > a:focus {
   color: white;
   background-color: none;
   outline: none;
@@ -60,6 +61,7 @@ section .bacContent {
 .aboutDescription a {
   color: black;
 }
+
 .aboutDescription a:hover {
   color: #2199e8;
   transition: .4s ease;
@@ -71,6 +73,7 @@ section .bacContent {
     flex-direction: column;
     justify-content: center;
   }
+
   .dawgs {
     max-width: 100%;
     padding: 20px 150px 20px 150px;

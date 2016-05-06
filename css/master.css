@@ -10,12 +10,10 @@
 @import url('/vendor/foundation/foundation.min.css');
 @import url('_base.css');
 
-
 /**
  * LAYOUT
  */
 @import url('_layout.css');
-
 
 /**
  * MODULE

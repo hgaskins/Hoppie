@@ -1,8 +1,8 @@
-# [Hoppie]("http://hoppieapp.herokuapp.com")
+# [Hoppie](http://hoppieapp.herokuapp.com)
 
 <b>Team Name</b>: Hoppies
 
-<b>Team Members</b>: [Hannah Gaskins]("https://github.com/hnag409"), [Randy Gulling]("https://github.com/rgylling"), [Johnny Luangphasy]("https://github.com/jluangphasy")
+<b>Team Members</b>: [Hannah Gaskins](https://github.com/hnag409), [Randy Gulling](https://github.com/rgylling), [Johnny Luangphasy](https://github.com/jluangphasy)
 
 The purpose of this project is to create a web app for beer consumers and connoisseurs alike.
 
@@ -11,9 +11,9 @@ about different types of beers. The app will also include information to calcula
 
 ## Requirements
 
-- [Node.js]("https://nodejs.org/en/")
-- [PostgreSQL]("http://www.postgresql.org/download/")
-- [Yelp API]("https://www.yelp.com/developers/documentation/v2/overview")
+- [Node.js](https://nodejs.org/en/)
+- [PostgreSQL](http://www.postgresql.org/download/)
+- [Yelp API](https://www.yelp.com/developers/documentation/v2/overview)
 
 ## Getting started
 

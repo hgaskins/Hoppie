@@ -22,6 +22,9 @@ about different types of beers. The app will also include information to calcula
 - as a user I want to know who created this site and why.
 - as a developer I want to use webSQL to persist my site's state.
 
+## Hoppie for dummies
+![Mobile Hoppie](userguide/userGuideMobile.png "mobilehoppie")
+![Mobile Menu](userguide/userGuideMobileAddress.png "mobilemenu")
 ## Domain Model
 
 ![Domain Modeling](wireframes/domainModel.jpg "domainModel")
